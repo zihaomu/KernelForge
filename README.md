@@ -28,6 +28,14 @@ CPU算子构成：
   - test 需要先实现python版本基于numpy的算子原型，然后将input和output数据写入test/data中，数据生成脚本也要保存到test中，然后C++部分基于libnpy实现加载python的验证数据，完成accuracy测试。
   - perf 就要include的头文件，实现一个算子的benchmark测试，测试不同规模数据，不同精度的速度。
 - gemm 同理
+- softmax
+- element-wise
+- activation
+- ffn
+- embeding
+- norm
+- 更多算子。。。
+- 更多算子，待加入
 
 GPU算子构成：
 由于GPU有众多平台，可以选择
@@ -36,7 +44,13 @@ GPU算子构成：
   - triton： 基于triton实现 python的算子
   - test  ： 统一使用 torch 作为算子实现原型，将结果保存成npy数组到test的data文件夹中，accuracy测试时，从test data中读取不同规模的测试数据，从而保证我们的kernel在不同情况都能生成比较好的数据
   - perf： 性能的base是 torch实现的对应的算子。
-
+- softmax
+- element-wise
+- activation
+- ffn
+- embeding
+- norm
+- 更多算子。。。
 
 算子列表[待补充]：
 GPU算子：

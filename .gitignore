@@ -56,3 +56,8 @@ build.*
 .vscode
 
 big_models
+
+# Agent-generated doc backups
+README.agent.md.bak.*
+**/README.agent.md.bak.*
+**/*.md.bak.*
