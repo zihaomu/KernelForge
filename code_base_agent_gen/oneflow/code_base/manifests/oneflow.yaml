@@ -1,0 +1,149 @@
+schema_version: 1
+repo: oneflow
+source_repo_path: code_base/oneflow
+source_commit: 25c8978c1c8b1371ef6aa4187dae4495bd233c35
+license_files:
+  - LICENSE
+  - ci/check/run_license_format.py
+scan_summary:
+  scanned_files_total: 4611
+  kernel_candidate_files: 2012
+include_globs:
+  - oneflow/user/**/*.cu
+  - oneflow/user/**/*.cuh
+  - oneflow/user/**/*.hip
+  - oneflow/user/**/*.cpp
+  - oneflow/user/**/*.cc
+  - oneflow/user/**/*.c
+  - oneflow/user/**/*.h
+  - oneflow/user/**/*.hpp
+  - oneflow/core/**/*.cu
+  - oneflow/core/**/*.cuh
+  - oneflow/core/**/*.hip
+  - oneflow/core/**/*.cpp
+  - oneflow/core/**/*.cc
+  - oneflow/core/**/*.c
+  - oneflow/core/**/*.h
+  - oneflow/core/**/*.hpp
+exclude_globs:
+  - tests/**
+  - test/**
+  - benchmark/**
+  - bench/**
+  - perf/**
+  - docs/**
+  - doc/**
+  - cmake/**
+  - **/CMakeLists.txt
+  - Makefile
+  - python/**
+  - .github/**
+  - **/*.md
+  - **/LICENSE*
+  - **/COPYING*
+include_keywords:
+  - __global__
+  - __kernel
+  - __launch_bounds__
+  - cutlass
+  - triton
+  - ldmatrix
+  - mma
+  - cp_async
+  - __shared__
+  - gemm
+  - matmul
+  - conv
+  - softmax
+  - layernorm
+  - rmsnorm
+  - activation
+  - silu
+  - gelu
+  - moe
+  - allreduce
+  - reduce
+  - pack
+  - vector
+  - simd
+  - _mm
+  - vnni
+  - xsimd
+  - quant
+  - dequant
+  - fp8
+  - int8
+  - int4
+op_map:
+  gemm:
+    - gemm
+    - matmul
+    - igemm
+    - brgemm
+  conv:
+    - conv
+    - deconv
+    - winograd
+    - im2col
+  attention:
+    - attention
+    - flash
+    - sdpa
+    - rope
+  moe:
+    - moe
+    - expert
+    - gating
+  norm:
+    - norm
+    - rmsnorm
+    - layernorm
+  activation:
+    - activation
+    - relu
+    - gelu
+    - silu
+  elementwise:
+    - elementwise
+    - unary
+    - binary
+  quantization:
+    - quant
+    - dequant
+    - gptq
+    - awq
+    - fp8
+    - int8
+    - int4
+  allreduce:
+    - allreduce
+    - all_reduce
+    - reduce
+backend:
+  tags:
+    - gpu
+    - cuda
+    - simd
+  path_backend_map:
+    src/**/*.cu:
+      - gpu
+      - cuda
+    src/**/*.hip:
+      - gpu
+      - rocm
+      - hip
+    src/**/*.cpp:
+      - cpu
+    csrc/**/*.cu:
+      - gpu
+      - cuda
+    csrc/**/*.cpp:
+      - cpu
+    ops/gpu/**:
+      - gpu
+    ops/cpu/**:
+      - cpu
+      - simd
+triage_policy:
+  include_if_uncertain: true
+  uncertain_mark: 待复核

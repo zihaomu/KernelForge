@@ -1,0 +1,77 @@
+{
+  "note": "oneflow appeared twice in requested sequence; one canonical output set is produced at code_base_agent_gen/oneflow and reused for duplicate slot.",
+  "entries": [
+    {
+      "repo": "sgl-kernel",
+      "manifest": "code_base_agent_gen/sgl-kernel/code_base/manifests/sgl-kernel.yaml",
+      "snippets_path": "code_base_agent_gen/sgl-kernel/knowledge/snippets/sgl-kernel.jsonl",
+      "snippets": 26,
+      "research_pack": "code_base_agent_gen/sgl-kernel/research_packs/sgl-kernel.md",
+      "triage": "code_base_agent_gen/sgl-kernel/reports/sgl-kernel_triage.md"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "manifest": "code_base_agent_gen/MatmulTutorial/code_base/manifests/MatmulTutorial.yaml",
+      "snippets_path": "code_base_agent_gen/MatmulTutorial/knowledge/snippets/MatmulTutorial.jsonl",
+      "snippets": 11,
+      "research_pack": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "triage": "code_base_agent_gen/MatmulTutorial/reports/MatmulTutorial_triage.md"
+    },
+    {
+      "repo": "MNN",
+      "manifest": "code_base_agent_gen/MNN/code_base/manifests/MNN.yaml",
+      "snippets_path": "code_base_agent_gen/MNN/knowledge/snippets/MNN.jsonl",
+      "snippets": 20,
+      "research_pack": "code_base_agent_gen/MNN/research_packs/MNN.md",
+      "triage": "code_base_agent_gen/MNN/reports/MNN_triage.md"
+    },
+    {
+      "repo": "ncnn",
+      "manifest": "code_base_agent_gen/ncnn/code_base/manifests/ncnn.yaml",
+      "snippets_path": "code_base_agent_gen/ncnn/knowledge/snippets/ncnn.jsonl",
+      "snippets": 20,
+      "research_pack": "code_base_agent_gen/ncnn/research_packs/ncnn.md",
+      "triage": "code_base_agent_gen/ncnn/reports/ncnn_triage.md"
+    },
+    {
+      "repo": "oneflow",
+      "manifest": "code_base_agent_gen/oneflow/code_base/manifests/oneflow.yaml",
+      "snippets_path": "code_base_agent_gen/oneflow/knowledge/snippets/oneflow.jsonl",
+      "snippets": 20,
+      "research_pack": "code_base_agent_gen/oneflow/research_packs/oneflow.md",
+      "triage": "code_base_agent_gen/oneflow/reports/oneflow_triage.md"
+    },
+    {
+      "repo": "opencv-dnn",
+      "manifest": "code_base_agent_gen/opencv-dnn/code_base/manifests/opencv-dnn.yaml",
+      "snippets_path": "code_base_agent_gen/opencv-dnn/knowledge/snippets/opencv-dnn.jsonl",
+      "snippets": 20,
+      "research_pack": "code_base_agent_gen/opencv-dnn/research_packs/opencv-dnn.md",
+      "triage": "code_base_agent_gen/opencv-dnn/reports/opencv-dnn_triage.md"
+    },
+    {
+      "repo": "sglang/sgl-kernel",
+      "manifest": "code_base_agent_gen/sglang/sgl-kernel/code_base/manifests/sgl-kernel.yaml",
+      "snippets_path": "code_base_agent_gen/sglang/sgl-kernel/knowledge/snippets/sgl-kernel.jsonl",
+      "snippets": 20,
+      "research_pack": "code_base_agent_gen/sglang/sgl-kernel/research_packs/sgl-kernel.md",
+      "triage": "code_base_agent_gen/sglang/sgl-kernel/reports/sgl-kernel_triage.md"
+    },
+    {
+      "repo": "xnnpack",
+      "manifest": "code_base_agent_gen/xnnpack/code_base/manifests/xnnpack.yaml",
+      "snippets_path": "code_base_agent_gen/xnnpack/knowledge/snippets/xnnpack.jsonl",
+      "snippets": 20,
+      "research_pack": "code_base_agent_gen/xnnpack/research_packs/xnnpack.md",
+      "triage": "code_base_agent_gen/xnnpack/reports/xnnpack_triage.md"
+    },
+    {
+      "repo": "oneDNN",
+      "manifest": "code_base_agent_gen/oneDNN/code_base/manifests/oneDNN.yaml",
+      "snippets_path": "code_base_agent_gen/oneDNN/knowledge/snippets/oneDNN.jsonl",
+      "snippets": 20,
+      "research_pack": "code_base_agent_gen/oneDNN/research_packs/oneDNN.md",
+      "triage": "code_base_agent_gen/oneDNN/reports/oneDNN_triage.md"
+    }
+  ]
+}

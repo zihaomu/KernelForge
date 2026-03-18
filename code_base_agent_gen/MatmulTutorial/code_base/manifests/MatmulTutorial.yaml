@@ -1,0 +1,165 @@
+schema_version: 1
+repo: MatmulTutorial
+source_repo_path: code_base/MatmulTutorial
+source_commit: 70f70fa08b1d5095dfb500c39f56b0465fff05e0
+license_files:
+  - LICENSE
+scan_summary:
+  scanned_files_total: 298
+  kernel_candidate_files: 156
+include_globs:
+  - examples/**/*.cu
+  - examples/**/*.cuh
+  - examples/**/*.hip
+  - examples/**/*.cpp
+  - examples/**/*.cc
+  - examples/**/*.c
+  - examples/**/*.h
+  - examples/**/*.hpp
+  - util/**/*.cu
+  - util/**/*.cuh
+  - util/**/*.hip
+  - util/**/*.cpp
+  - util/**/*.cc
+  - util/**/*.c
+  - util/**/*.h
+  - util/**/*.hpp
+  - include/reference.h/**/*.cu
+  - include/reference.h/**/*.cuh
+  - include/reference.h/**/*.hip
+  - include/reference.h/**/*.cpp
+  - include/reference.h/**/*.cc
+  - include/reference.h/**/*.c
+  - include/reference.h/**/*.h
+  - include/reference.h/**/*.hpp
+  - include/common.h/**/*.cu
+  - include/common.h/**/*.cuh
+  - include/common.h/**/*.hip
+  - include/common.h/**/*.cpp
+  - include/common.h/**/*.cc
+  - include/common.h/**/*.c
+  - include/common.h/**/*.h
+  - include/common.h/**/*.hpp
+exclude_globs:
+  - tests/**
+  - test/**
+  - benchmark/**
+  - bench/**
+  - perf/**
+  - docs/**
+  - doc/**
+  - cmake/**
+  - **/CMakeLists.txt
+  - Makefile
+  - python/**
+  - .github/**
+  - **/*.md
+  - **/LICENSE*
+  - **/COPYING*
+include_keywords:
+  - __global__
+  - __kernel
+  - __launch_bounds__
+  - cutlass
+  - triton
+  - ldmatrix
+  - mma
+  - cp_async
+  - __shared__
+  - gemm
+  - matmul
+  - conv
+  - softmax
+  - layernorm
+  - rmsnorm
+  - activation
+  - silu
+  - gelu
+  - moe
+  - allreduce
+  - reduce
+  - pack
+  - vector
+  - simd
+  - _mm
+  - vnni
+  - xsimd
+  - quant
+  - dequant
+  - fp8
+  - int8
+  - int4
+op_map:
+  gemm:
+    - gemm
+    - matmul
+    - igemm
+    - brgemm
+  conv:
+    - conv
+    - deconv
+    - winograd
+    - im2col
+  attention:
+    - attention
+    - flash
+    - sdpa
+    - rope
+  moe:
+    - moe
+    - expert
+    - gating
+  norm:
+    - norm
+    - rmsnorm
+    - layernorm
+  activation:
+    - activation
+    - relu
+    - gelu
+    - silu
+  elementwise:
+    - elementwise
+    - unary
+    - binary
+  quantization:
+    - quant
+    - dequant
+    - gptq
+    - awq
+    - fp8
+    - int8
+    - int4
+  allreduce:
+    - allreduce
+    - all_reduce
+    - reduce
+backend:
+  tags:
+    - gpu
+    - cuda
+    - simd
+    - cpu
+  path_backend_map:
+    src/**/*.cu:
+      - gpu
+      - cuda
+    src/**/*.hip:
+      - gpu
+      - rocm
+      - hip
+    src/**/*.cpp:
+      - cpu
+    csrc/**/*.cu:
+      - gpu
+      - cuda
+    csrc/**/*.cpp:
+      - cpu
+    ops/gpu/**:
+      - gpu
+    ops/cpu/**:
+      - cpu
+      - simd
+triage_policy:
+  include_if_uncertain: true
+  uncertain_mark: 待复核

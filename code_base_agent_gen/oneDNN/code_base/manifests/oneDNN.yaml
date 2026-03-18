@@ -1,0 +1,126 @@
+schema_version: 1
+repo: oneDNN
+source_repo_path: code_base/oneDNN
+source_commit: 61359b68ffd7b2ac9d912fecdee278f5eed3a4eb
+license_files:
+  - LICENSE
+  - third_party/ngen/COPYRIGHT
+  - third_party/ittnotify/LICENSE.BSD
+  - third_party/opencl/LICENSE
+  - third_party/xbyak/COPYRIGHT
+  - third_party/gtest/LICENSE
+scan_summary:
+  scanned_files_total: 4755
+  kernel_candidate_files: 2853
+include_globs:
+  - src/cpu/**/*.cpp
+  - src/cpu/**/*.cc
+  - src/cpu/**/*.c
+  - src/cpu/**/*.h
+  - src/cpu/**/*.hpp
+  - src/cpu/**/*.cu
+  - src/cpu/**/*.cuh
+  - src/cpu/**/*.cl
+  - src/gpu/**/*.cpp
+  - src/gpu/**/*.cc
+  - src/gpu/**/*.c
+  - src/gpu/**/*.h
+  - src/gpu/**/*.hpp
+  - src/gpu/**/*.cu
+  - src/gpu/**/*.cuh
+  - src/gpu/**/*.cl
+exclude_globs:
+  - tests/**
+  - examples/**
+  - doc/**
+  - docs/**
+  - cmake/**
+  - .github/**
+  - third_party/**
+  - scripts/**
+  - **/*.md
+  - **/CMakeLists.txt
+include_keywords:
+  - jit
+  - kernel
+  - brgemm
+  - gemm
+  - matmul
+  - conv
+  - softmax
+  - layernorm
+  - rmsnorm
+  - eltwise
+  - reorder
+  - pack
+  - tile
+  - blocking
+  - unroll
+  - vector
+  - simd
+  - avx
+  - amx
+  - vnni
+  - bf16
+  - int8
+  - fp16
+  - quantize
+  - dequantize
+  - primitive
+op_map:
+  gemm:
+    - gemm
+    - matmul
+    - brgemm
+  conv:
+    - conv
+    - convolution
+    - deconvolution
+  attention:
+    - attention
+    - softmax
+  norm:
+    - norm
+    - layernorm
+    - batchnorm
+    - groupnorm
+  activation:
+    - eltwise
+    - relu
+    - gelu
+    - swish
+  reorder:
+    - reorder
+    - layout
+    - pack
+  quantization:
+    - quant
+    - dequant
+    - int8
+    - bf16
+    - fp16
+backend:
+  tags:
+    - cpu
+    - simd
+    - gpu
+  path_backend_map:
+    src/cpu/**:
+      - cpu
+      - simd
+    src/gpu/**:
+      - gpu
+      - opencl
+      - sycl
+    src/cpu/x64/**:
+      - cpu
+      - simd
+    src/cpu/aarch64/**:
+      - cpu
+      - simd
+    src/cpu/riscv64/**:
+      - cpu
+      - simd
+triage_policy:
+  include_if_uncertain: true
+  uncertain_mark: 待复核

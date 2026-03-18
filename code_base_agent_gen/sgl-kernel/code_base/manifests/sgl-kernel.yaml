@@ -1,0 +1,127 @@
+schema_version: 1
+repo: sgl-kernel
+source_repo_path: code_base/sglang/sgl-kernel
+source_commit: 9a697ceabb2dce6885f6a1ab8993d9980ade86c1
+license_files:
+  - code_base/sglang/sgl-kernel/LICENSE
+  - code_base/sglang/sgl-kernel/THIRDPARTYNOTICES.txt
+
+scan_summary:
+  scanned_files_total: 291
+  kernel_candidate_files: 165
+  notes:
+    - "Primary kernel path is csrc/ with CUDA/HIP/C++ kernels and launchers."
+    - "CPU SIMD kernels exist under csrc/cpu/ (AVX512, VNNI, BF16/FP8 paths)."
+
+include_globs:
+  - "csrc/**/*.cu"
+  - "csrc/**/*.cuh"
+  - "csrc/**/*.hip"
+  - "csrc/**/*.cpp"
+  - "csrc/**/*.cc"
+  - "csrc/**/*.h"
+  - "csrc/**/*.hpp"
+  - "include/**/*.h"
+  - "include/**/*.hpp"
+
+exclude_globs:
+  - "tests/**"
+  - "benchmark/**"
+  - "python/**"
+  - "cmake/**"
+  - "**/CMakeLists.txt"
+  - "Dockerfile"
+  - "build.sh"
+  - "kernel-runner-setup.sh"
+  - "pyproject*.toml"
+  - "setup*.py"
+  - "README.md"
+  - "LICENSE"
+  - "THIRDPARTYNOTICES.txt"
+  - "**/*test*"
+
+include_keywords:
+  - "__global__"
+  - "__launch_bounds__"
+  - "cutlass"
+  - "gemm"
+  - "moe"
+  - "all_reduce"
+  - "allreduce"
+  - "topk"
+  - "softmax"
+  - "sigmoid"
+  - "rmsnorm"
+  - "layernorm"
+  - "rope"
+  - "rotary"
+  - "fp8"
+  - "int8"
+  - "int4"
+  - "gptq"
+  - "awq"
+  - "shared"
+  - "warp"
+  - "cp_async"
+  - "mma"
+  - "ldmatrix"
+  - "vnni"
+  - "_mm512"
+  - "brgemm"
+
+op_map:
+  gemm:
+    path_hints:
+      - "csrc/gemm/**"
+      - "csrc/cutlass_extensions/gemm/**"
+      - "csrc/cpu/gemm*.cpp"
+    keywords: ["gemm", "scaled_mm", "mma", "ldmatrix", "cutlass", "brgemm"]
+  moe:
+    path_hints:
+      - "csrc/moe/**"
+      - "csrc/expert_specialization/**"
+    keywords: ["moe", "topk", "fused_gate", "grouped_mm", "expert"]
+  attention:
+    path_hints:
+      - "csrc/attention/**"
+      - "csrc/elementwise/pos_enc*"
+    keywords: ["attention", "mla", "flash", "merge_state", "rope", "qk_norm"]
+  quantization:
+    path_hints:
+      - "csrc/quantization/**"
+      - "csrc/gemm/awq*"
+      - "csrc/gemm/gptq/**"
+      - "csrc/gemm/per_token*"
+    keywords: ["quant", "dequant", "gptq", "awq", "fp8", "int8", "group_quant"]
+  allreduce:
+    path_hints:
+      - "csrc/allreduce/**"
+      - "csrc/cpu/shm*"
+    keywords: ["all_reduce", "allreduce", "reduce", "barrier", "ipc"]
+  norm_activation:
+    path_hints:
+      - "csrc/elementwise/**"
+      - "csrc/cpu/norm.cpp"
+      - "csrc/cpu/activation.cpp"
+    keywords: ["rmsnorm", "layernorm", "silu", "gelu", "fused_add"]
+  speculative:
+    path_hints:
+      - "csrc/speculative/**"
+    keywords: ["speculative", "tree", "sampling", "eagle", "ngram"]
+
+backend:
+  tags: ["cpu", "gpu", "cuda", "rocm", "hip", "cutlass", "simd", "avx512", "vnni"]
+  path_backend_map:
+    "csrc/cpu/**": ["cpu", "simd", "avx512", "vnni"]
+    "csrc/allreduce/*.hip": ["rocm", "hip", "gpu"]
+    "csrc/**/*.{cu,cuh}": ["cuda", "gpu"]
+    "csrc/cutlass_extensions/**": ["cuda", "cutlass", "gpu"]
+    "include/hip/**": ["rocm", "hip", "gpu"]
+
+triage_policy:
+  include_if_uncertain: true
+  uncertain_mark: "待复核"
+  high_signal_definition:
+    - "Contains kernel implementation, launch configuration, or architecture dispatch."
+    - "Contains vectorization/tensorcore/shared-memory/packing/reduction techniques."
+    - "Directly on operator critical path (GEMM, MoE routing, attention, quantization, allreduce)."

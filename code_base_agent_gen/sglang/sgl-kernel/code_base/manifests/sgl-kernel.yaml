@@ -1,0 +1,159 @@
+schema_version: 1
+repo: sglang/sgl-kernel
+source_repo_path: code_base/sglang/sgl-kernel
+source_commit: 9a697ceabb2dce6885f6a1ab8993d9980ade86c1
+license_files:
+  - LICENSE
+  - THIRDPARTYNOTICES.txt
+scan_summary:
+  scanned_files_total: 292
+  kernel_candidate_files: 237
+include_globs:
+  - csrc/moe/**/*.cu
+  - csrc/moe/**/*.cuh
+  - csrc/moe/**/*.hip
+  - csrc/moe/**/*.cpp
+  - csrc/moe/**/*.cc
+  - csrc/moe/**/*.c
+  - csrc/moe/**/*.h
+  - csrc/moe/**/*.hpp
+  - csrc/gemm/**/*.cu
+  - csrc/gemm/**/*.cuh
+  - csrc/gemm/**/*.hip
+  - csrc/gemm/**/*.cpp
+  - csrc/gemm/**/*.cc
+  - csrc/gemm/**/*.c
+  - csrc/gemm/**/*.h
+  - csrc/gemm/**/*.hpp
+  - csrc/allreduce/**/*.cu
+  - csrc/allreduce/**/*.cuh
+  - csrc/allreduce/**/*.hip
+  - csrc/allreduce/**/*.cpp
+  - csrc/allreduce/**/*.cc
+  - csrc/allreduce/**/*.c
+  - csrc/allreduce/**/*.h
+  - csrc/allreduce/**/*.hpp
+exclude_globs:
+  - tests/**
+  - test/**
+  - benchmark/**
+  - bench/**
+  - perf/**
+  - docs/**
+  - doc/**
+  - cmake/**
+  - **/CMakeLists.txt
+  - Makefile
+  - python/**
+  - .github/**
+  - **/*.md
+  - **/LICENSE*
+  - **/COPYING*
+include_keywords:
+  - __global__
+  - __kernel
+  - __launch_bounds__
+  - cutlass
+  - triton
+  - ldmatrix
+  - mma
+  - cp_async
+  - __shared__
+  - gemm
+  - matmul
+  - conv
+  - softmax
+  - layernorm
+  - rmsnorm
+  - activation
+  - silu
+  - gelu
+  - moe
+  - allreduce
+  - reduce
+  - pack
+  - vector
+  - simd
+  - _mm
+  - vnni
+  - xsimd
+  - quant
+  - dequant
+  - fp8
+  - int8
+  - int4
+op_map:
+  gemm:
+    - gemm
+    - matmul
+    - igemm
+    - brgemm
+  conv:
+    - conv
+    - deconv
+    - winograd
+    - im2col
+  attention:
+    - attention
+    - flash
+    - sdpa
+    - rope
+  moe:
+    - moe
+    - expert
+    - gating
+  norm:
+    - norm
+    - rmsnorm
+    - layernorm
+  activation:
+    - activation
+    - relu
+    - gelu
+    - silu
+  elementwise:
+    - elementwise
+    - unary
+    - binary
+  quantization:
+    - quant
+    - dequant
+    - gptq
+    - awq
+    - fp8
+    - int8
+    - int4
+  allreduce:
+    - allreduce
+    - all_reduce
+    - reduce
+backend:
+  tags:
+    - gpu
+    - cuda
+    - rocm
+    - hip
+    - cpu
+  path_backend_map:
+    src/**/*.cu:
+      - gpu
+      - cuda
+    src/**/*.hip:
+      - gpu
+      - rocm
+      - hip
+    src/**/*.cpp:
+      - cpu
+    csrc/**/*.cu:
+      - gpu
+      - cuda
+    csrc/**/*.cpp:
+      - cpu
+    ops/gpu/**:
+      - gpu
+    ops/cpu/**:
+      - cpu
+      - simd
+triage_policy:
+  include_if_uncertain: true
+  uncertain_mark: 待复核

@@ -2,6 +2,8 @@
 
 本项目旨在做一个AI自动生成的kernel池子，包括torch相关的GPU算子，XSIMD相关的CPU算子。
 
+其中GPU实验的环境在：`conda activate py12_sgl`
+
 项目结构：
 code_base中存放一些等待学习的kernel代码片段，从各个开源仓库搜集来的。
 - sgl-kernel

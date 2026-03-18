@@ -1,0 +1,155 @@
+schema_version: 1
+repo: xnnpack
+source_repo_path: code_base/xnnpack
+source_commit: 95af55e5c81dc88edfa48dec8f3bff0b275513d2
+license_files:
+  - LICENSE
+scan_summary:
+  scanned_files_total: 11552
+  kernel_candidate_files: 10082
+include_globs:
+  - src/xnnpack/**/*.cu
+  - src/xnnpack/**/*.cuh
+  - src/xnnpack/**/*.hip
+  - src/xnnpack/**/*.cpp
+  - src/xnnpack/**/*.cc
+  - src/xnnpack/**/*.c
+  - src/xnnpack/**/*.h
+  - src/xnnpack/**/*.hpp
+  - ynnpack/**/*.cu
+  - ynnpack/**/*.cuh
+  - ynnpack/**/*.hip
+  - ynnpack/**/*.cpp
+  - ynnpack/**/*.cc
+  - ynnpack/**/*.c
+  - ynnpack/**/*.h
+  - ynnpack/**/*.hpp
+  - src/operators/**/*.cu
+  - src/operators/**/*.cuh
+  - src/operators/**/*.hip
+  - src/operators/**/*.cpp
+  - src/operators/**/*.cc
+  - src/operators/**/*.c
+  - src/operators/**/*.h
+  - src/operators/**/*.hpp
+exclude_globs:
+  - tests/**
+  - test/**
+  - benchmark/**
+  - bench/**
+  - perf/**
+  - docs/**
+  - doc/**
+  - cmake/**
+  - **/CMakeLists.txt
+  - Makefile
+  - python/**
+  - .github/**
+  - **/*.md
+  - **/LICENSE*
+  - **/COPYING*
+include_keywords:
+  - __global__
+  - __kernel
+  - __launch_bounds__
+  - cutlass
+  - triton
+  - ldmatrix
+  - mma
+  - cp_async
+  - __shared__
+  - gemm
+  - matmul
+  - conv
+  - softmax
+  - layernorm
+  - rmsnorm
+  - activation
+  - silu
+  - gelu
+  - moe
+  - allreduce
+  - reduce
+  - pack
+  - vector
+  - simd
+  - _mm
+  - vnni
+  - xsimd
+  - quant
+  - dequant
+  - fp8
+  - int8
+  - int4
+op_map:
+  gemm:
+    - gemm
+    - matmul
+    - igemm
+    - brgemm
+  conv:
+    - conv
+    - deconv
+    - winograd
+    - im2col
+  attention:
+    - attention
+    - flash
+    - sdpa
+    - rope
+  moe:
+    - moe
+    - expert
+    - gating
+  norm:
+    - norm
+    - rmsnorm
+    - layernorm
+  activation:
+    - activation
+    - relu
+    - gelu
+    - silu
+  elementwise:
+    - elementwise
+    - unary
+    - binary
+  quantization:
+    - quant
+    - dequant
+    - gptq
+    - awq
+    - fp8
+    - int8
+    - int4
+  allreduce:
+    - allreduce
+    - all_reduce
+    - reduce
+backend:
+  tags:
+    - cpu
+    - simd
+  path_backend_map:
+    src/**/*.cu:
+      - gpu
+      - cuda
+    src/**/*.hip:
+      - gpu
+      - rocm
+      - hip
+    src/**/*.cpp:
+      - cpu
+    csrc/**/*.cu:
+      - gpu
+      - cuda
+    csrc/**/*.cpp:
+      - cpu
+    ops/gpu/**:
+      - gpu
+    ops/cpu/**:
+      - cpu
+      - simd
+triage_policy:
+  include_if_uncertain: true
+  uncertain_mark: 待复核

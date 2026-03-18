@@ -1,0 +1,63 @@
+schema_version: 1
+repo: ncnn
+source_repo_path: code_base/ncnn
+source_commit: 7237643e4c0da870d8d022eddcf8730c501f1483
+license_files:
+  - LICENSE.txt
+
+scan_summary:
+  scanned_files_total: 3899
+  kernel_candidate_files: 1492
+
+include_globs:
+  - src/layer/**/*.cpp
+  - src/layer/**/*.h
+  - src/layer/vulkan/**/*.cpp
+  - src/layer/x86/**/*.h
+  - src/layer/arm/**/*.h
+  - src/layer/mips/**/*.h
+
+exclude_globs:
+  - tests/**
+  - benchmark/**
+  - docs/**
+  - python/**
+  - .github/**
+  - cmake/**
+  - **/*.md
+
+include_keywords:
+  - forward
+  - create_pipeline
+  - destroy_pipeline
+  - convdw
+  - winograd
+  - im2col_sgemm
+  - softmax
+  - quantize
+  - dequantize
+  - requantize
+  - avx
+  - neon
+  - vulkan
+
+op_map:
+  gemm: [gemm, matmul, innerproduct, sgemm]
+  conv: [convolution, deconvolution, convdw, winograd, im2col]
+  attention: [sdpa, softmax, attention]
+  norm: [norm, rmsnorm, layernorm, instancenorm, groupnorm]
+  quantization: [quantize, dequantize, requantize, int8]
+  pooling: [pooling, pool]
+
+backend:
+  tags: [cpu, simd, x86, arm, mips, riscv, gpu, vulkan]
+  path_backend_map:
+    src/layer/x86/**: [cpu, simd, x86]
+    src/layer/arm/**: [cpu, simd, arm]
+    src/layer/mips/**: [cpu, simd, mips]
+    src/layer/riscv/**: [cpu, simd, riscv]
+    src/layer/vulkan/**: [gpu, vulkan]
+
+triage_policy:
+  include_if_uncertain: true
+  uncertain_mark: 待复核
