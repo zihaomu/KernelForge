@@ -44,6 +44,8 @@ GPU算子构成：
   - triton： 基于triton实现 python的算子
   - test  ： 统一使用 torch 作为算子实现原型，将结果保存成npy数组到test的data文件夹中，accuracy测试时，从test data中读取不同规模的测试数据，从而保证我们的kernel在不同情况都能生成比较好的数据
   - perf： 性能的base是 torch实现的对应的算子。
+  - readme.md : 包含算子的接口协议，以及算子使用方法例子展示，以及对应的benchmark结果
+  readme.md : 包含算子的benchmark的情况，以及使用方法，其中benchmark结果是对比pytorch的实现
 - softmax
 - element-wise
 - activation
