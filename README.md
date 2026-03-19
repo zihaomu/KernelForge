@@ -1,4 +1,4 @@
-# Kernel
+# KernelForge
 
 本项目旨在做一个AI自动生成的kernel池子，包括torch相关的GPU算子，XSIMD相关的CPU算子。
 
