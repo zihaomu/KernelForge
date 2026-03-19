@@ -1,0 +1,58 @@
+{
+  "iteration": 12,
+  "bucket": "large",
+  "hypothesis": "bucket=large try blocked (bm=64,bn=64,bk=96,th=16,uk=4,simd=1)",
+  "candidate": {
+    "kernel_variant": "blocked",
+    "block_m": 64,
+    "block_n": 64,
+    "block_k": 96,
+    "pack_a": false,
+    "pack_b": false,
+    "simd": true,
+    "threads": 16,
+    "unroll_k": 4
+  },
+  "gate": {
+    "correctness_pass": true,
+    "failure_stage": "",
+    "reason": "ok",
+    "rows": [
+      {
+        "valid": true,
+        "kernel_variant": "blocked",
+        "m": 1024,
+        "n": 1024,
+        "k": 1024,
+        "bm": 64,
+        "bn": 64,
+        "bk": 96,
+        "pack_a": false,
+        "pack_b": false,
+        "simd": true,
+        "threads": 16,
+        "unroll_k": 4,
+        "latency_ms_p50": 6.47218,
+        "latency_ms_p95": 7.00046,
+        "gflops": 331.802,
+        "max_abs_err": 0,
+        "max_rel_err": 0,
+        "output_sum": -8289.11,
+        "output_l2": 119451000.0,
+        "shape_name": "s4_1024"
+      }
+    ],
+    "avg_latency_us": 6472.179999999999,
+    "avg_gflops": 331.802,
+    "candidate_signature": "blocked|64|64|96|False|False|True|16|4"
+  },
+  "score": 15.94467804424159,
+  "decision": {
+    "decision": "revert",
+    "reason": "improvement_below_threshold",
+    "new_best_score": 19.403705835843702,
+    "improved": false,
+    "threshold": 0.19403705835843701,
+    "delta": -3.4590277916021126
+  }
+}

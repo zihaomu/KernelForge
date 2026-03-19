@@ -1,0 +1,11 @@
+queries:
+  - "cpu gemm blocking packing microkernel optimization"
+  - "gemm cache blocking simd openmp optimization"
+  - "matrix multiplication tiling packing strategy cpu"
+
+seed_urls:
+  - "https://github.com/flame/blis/blob/master/docs/KernelsHowTo.md"
+  - "https://www.intel.com/content/www/us/en/developer/articles/technical/intel-oneapi-math-kernel-library-performance-tips.html"
+  - "https://www.openmp.org/spec-html/5.2/openmpsu30.html"
+  - "https://developer.arm.com/documentation/102159/latest/"
+

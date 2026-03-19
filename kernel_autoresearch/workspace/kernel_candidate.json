@@ -1,0 +1,11 @@
+{
+  "kernel_variant": "blocked_pack",
+  "bm": 128,
+  "bn": 96,
+  "bk": 64,
+  "pack_a": true,
+  "pack_b": true,
+  "simd": false,
+  "threads": 16,
+  "unroll_k": 1
+}

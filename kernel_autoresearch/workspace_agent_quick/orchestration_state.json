@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "status": "completed",
+  "iteration": 8,
+  "max_iterations": 8,
+  "bucket_order": [
+    "medium",
+    "large"
+  ],
+  "active_bucket_idx": 0,
+  "no_improve_count": 1,
+  "patience_no_improve": 3,
+  "candidate_cursor_by_bucket": {
+    "medium": 8,
+    "large": 0
+  },
+  "best_score_by_bucket": {
+    "medium": 2.6021625827761987,
+    "large": 1.0
+  },
+  "best_candidate_by_bucket": {
+    "medium": {
+      "kernel_variant": "blocked_pack",
+      "bm": 64,
+      "bn": 64,
+      "bk": 160,
+      "pack_a": true,
+      "pack_b": true,
+      "simd": true,
+      "threads": 16,
+      "unroll_k": 1
+    },
+    "large": {
+      "kernel_variant": "blocked",
+      "bm": 64,
+      "bn": 64,
+      "bk": 64,
+      "pack_a": false,
+      "pack_b": false,
+      "simd": true,
+      "threads": 4,
+      "unroll_k": 2
+    }
+  },
+  "baseline_by_bucket": {
+    "medium": {
+      "avg_latency_ms": 1.4232743333333333,
+      "avg_gflops": 58.81613333333333
+    },
+    "large": {
+      "avg_latency_ms": 71.69874999999999,
+      "avg_gflops": 71.91215
+    }
+  },
+  "seen_signatures_by_bucket": {
+    "medium": [
+      "blocked|64|128|128|False|False|True|4|1",
+      "blocked_pack|96|96|96|True|True|True|16|2",
+      "naive|0|0|0|False|False|False|1|1",
+      "blocked_pack|80|96|128|True|True|True|16|2",
+      "blocked_pack|80|96|128|True|True|True|16|1",
+      "blocked|64|64|96|False|False|True|1|2",
+      "blocked_pack|80|112|128|False|False|False|16|2",
+      "blocked_pack|64|64|160|True|True|True|16|1",
+      "blocked_pack|48|64|128|False|False|True|16|2"
+    ],
+    "large": [
+      "blocked|64|64|64|False|False|True|4|2"
+    ]
+  },
+  "history_tail": [
+    {
+      "iteration": 1,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|96|96|96|True|True|True|16|2",
+      "proposal_source": "agent_heuristic",
+      "decision": "keep",
+      "reason": "score_improved",
+      "score": 1.8919936219298485,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 2,
+      "bucket": "medium",
+      "candidate_signature": "naive|0|0|0|False|False|False|1|1",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 0.03350834257655327,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 3,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|80|96|128|True|True|True|16|2",
+      "proposal_source": "agent_heuristic",
+      "decision": "keep",
+      "reason": "score_improved",
+      "score": 1.9983518382053465,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 4,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|80|96|128|True|True|True|16|1",
+      "proposal_source": "agent_heuristic",
+      "decision": "keep",
+      "reason": "score_improved",
+      "score": 2.33868879146422,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 5,
+      "bucket": "medium",
+      "candidate_signature": "blocked|64|64|96|False|False|True|1|2",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 0.31175606580850856,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 6,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|80|112|128|False|False|False|16|2",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 2.296582115751436,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 7,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|64|64|160|True|True|True|16|1",
+      "proposal_source": "agent_heuristic",
+      "decision": "keep",
+      "reason": "score_improved",
+      "score": 2.6021625827761987,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 8,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|48|64|128|False|False|True|16|2",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 2.4277332076526905,
+      "correctness_pass": true
+    }
+  ]
+}

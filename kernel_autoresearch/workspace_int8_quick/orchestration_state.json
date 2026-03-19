@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "status": "completed",
+  "iteration": 8,
+  "max_iterations": 8,
+  "bucket_order": [
+    "medium",
+    "large"
+  ],
+  "active_bucket_idx": 1,
+  "no_improve_count": 0,
+  "patience_no_improve": 3,
+  "candidate_cursor_by_bucket": {
+    "medium": 6,
+    "large": 2
+  },
+  "best_score_by_bucket": {
+    "medium": 2.3061046494053974,
+    "large": 1.0776683454184157
+  },
+  "best_candidate_by_bucket": {
+    "medium": {
+      "kernel_variant": "blocked_pack",
+      "bm": 80,
+      "bn": 96,
+      "bk": 128,
+      "pack_a": true,
+      "pack_b": true,
+      "simd": true,
+      "threads": 16,
+      "unroll_k": 2,
+      "input_dtype": "i8",
+      "output_dtype": "i32"
+    },
+    "large": {
+      "kernel_variant": "blocked",
+      "bm": 48,
+      "bn": 64,
+      "bk": 32,
+      "pack_a": true,
+      "pack_b": true,
+      "simd": true,
+      "threads": 4,
+      "unroll_k": 1,
+      "input_dtype": "i8",
+      "output_dtype": "i32"
+    }
+  },
+  "baseline_by_bucket": {
+    "medium": {
+      "avg_latency_ms": 1.172198,
+      "avg_gflops": 74.0959
+    },
+    "large": {
+      "avg_latency_ms": 64.08815,
+      "avg_gflops": 81.97505000000001
+    }
+  },
+  "seen_signatures_by_bucket": {
+    "medium": [
+      "blocked|64|128|128|False|False|True|4|1|i8|i32",
+      "blocked_pack|96|96|96|True|True|True|16|2|i8|i32",
+      "naive|0|0|0|False|False|False|1|1|i8|i32",
+      "blocked_pack|80|96|128|True|True|True|16|2|i8|i32",
+      "blocked_pack|80|96|128|True|True|True|16|1|i8|i32",
+      "blocked|64|64|96|False|False|True|1|2|i8|i32",
+      "blocked_pack|80|112|128|False|False|False|16|1|i8|i32"
+    ],
+    "large": [
+      "blocked|64|64|64|False|False|True|4|2|i8|i32",
+      "blocked|48|32|96|False|False|True|4|2|i8|i32",
+      "blocked|48|64|32|True|True|True|4|1|i8|i32"
+    ]
+  },
+  "history_tail": [
+    {
+      "iteration": 1,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|96|96|96|True|True|True|16|2|i8|i32",
+      "proposal_source": "agent_heuristic",
+      "decision": "keep",
+      "reason": "score_improved",
+      "score": 1.5113989626648112,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 2,
+      "bucket": "medium",
+      "candidate_signature": "naive|0|0|0|False|False|False|1|1|i8|i32",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 0.061156148616101226,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 3,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|80|96|128|True|True|True|16|2|i8|i32",
+      "proposal_source": "agent_heuristic",
+      "decision": "keep",
+      "reason": "score_improved",
+      "score": 2.3061046494053974,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 4,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|80|96|128|True|True|True|16|1|i8|i32",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 2.1784384397280356,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 5,
+      "bucket": "medium",
+      "candidate_signature": "blocked|64|64|96|False|False|True|1|2|i8|i32",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 0.284905418078656,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 6,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|80|112|128|False|False|False|16|1|i8|i32",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 2.141676011551877,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 7,
+      "bucket": "large",
+      "candidate_signature": "blocked|48|32|96|False|False|True|4|2|i8|i32",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 0.8502430658676468,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 8,
+      "bucket": "large",
+      "candidate_signature": "blocked|48|64|32|True|True|True|4|1|i8|i32",
+      "proposal_source": "agent_heuristic",
+      "decision": "keep",
+      "reason": "score_improved",
+      "score": 1.0776683454184157,
+      "correctness_pass": true
+    }
+  ]
+}

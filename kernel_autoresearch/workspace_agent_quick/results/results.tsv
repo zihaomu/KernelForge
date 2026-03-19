@@ -1,0 +1,9 @@
+ts	iteration	bucket	candidate_signature	correctness_pass	avg_latency_ms	avg_gflops	score	best_score_before	best_score_after	decision	reason	proposal_source	proposal_note
+2026-03-18T18:14:16	1	medium	blocked_pack|96|96|96|True|True|True|16|2	1	0.673019	98.177433	1.891994	1.000000	1.891994	keep	score_improved	agent_heuristic	heuristic_after_openai_fail
+2026-03-18T18:14:17	2	medium	naive|0|0|0|False|False|False|1|1	1	90.179890	3.013390	0.033508	1.891994	1.891994	revert	improvement_below_threshold	agent_heuristic	heuristic_after_openai_fail
+2026-03-18T18:14:17	3	medium	blocked_pack|80|96|128|True|True|True|16|2	1	0.656773	107.611800	1.998352	1.891994	1.998352	keep	score_improved	agent_heuristic	heuristic_after_openai_fail
+2026-03-18T18:14:17	4	medium	blocked_pack|80|96|128|True|True|True|16|1	1	0.549406	122.737900	2.338689	1.998352	2.338689	keep	score_improved	agent_heuristic	heuristic_after_openai_fail
+2026-03-18T18:14:17	5	medium	blocked|64|64|96|False|False|True|1|2	1	5.034640	20.045467	0.311756	2.338689	2.338689	revert	improvement_below_threshold	agent_heuristic	heuristic_after_openai_fail
+2026-03-18T18:14:17	6	medium	blocked_pack|80|112|128|False|False|False|16|2	1	0.575304	124.643800	2.296582	2.338689	2.338689	revert	improvement_below_threshold	agent_heuristic	heuristic_after_openai_fail
+2026-03-18T18:14:17	7	medium	blocked_pack|64|64|160|True|True|True|16|1	1	0.493209	136.369933	2.602163	2.338689	2.602163	keep	score_improved	agent_heuristic	heuristic_after_openai_fail
+2026-03-18T18:14:17	8	medium	blocked_pack|48|64|128|False|False|True|16|2	1	0.539716	130.477000	2.427733	2.602163	2.602163	revert	improvement_below_threshold	agent_heuristic	heuristic_after_openai_fail

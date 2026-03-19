@@ -1,0 +1,62 @@
+paths:
+  cpp_runner:
+    source_dir: kernel_autoresearch_v2/cpp_runner
+    build_dir: kernel_autoresearch_v2/cpp_runner/build
+    binary_name: kc_gemm_runner
+    cmake_build_type: Release
+  shapes_config: kernel_autoresearch_v2/configs/shapes.yaml
+
+experiment:
+  seed: 7
+  warmup_iters: 2
+  measure_iters: 6
+  verify: true
+  trial_timeout_sec: 20
+  max_candidates_per_bucket: 96
+  buckets:
+    small:
+      max_volume: 2000000
+      alpha_throughput: 0.40
+    medium:
+      max_volume: 200000000
+      alpha_throughput: 0.50
+    large:
+      max_volume: null
+      alpha_throughput: 0.60
+
+candidate_space:
+  kernel_variants: [naive, blocked, blocked_pack, blocked_pack_simd]
+  block_m: [16, 32, 64, 96, 128]
+  block_n: [16, 32, 64, 96, 128]
+  block_k: [16, 32, 64, 96, 128]
+  unroll_k: [1, 2, 4]
+  thread_choices: [1, 2, 4, 8, 16]
+  allow_pack: true
+  allow_simd: true
+
+autoresearch:
+  workspace_dir: kernel_autoresearch_v2/workspace
+  artifact_file: gemm_candidate.json
+  results_tsv: results/results.tsv
+  state_file: orchestration_state.json
+  run_log: run.log
+  final_report: final_report.md
+  harness_manifest: kernel_autoresearch_v2/harness/manifest.json
+  harness_files:
+    - kernel_autoresearch_v2/harness/bench.py
+    - kernel_autoresearch_v2/harness/reference.py
+  max_iterations: 30
+  patience_no_improve: 6
+  min_improve_ratio: 0.01
+  gates:
+    tiny_shape:
+      m: 32
+      n: 32
+      k: 32
+    checksum_atol: 1.0e-3
+    checksum_rtol: 1.0e-3
+    stability_repeat: 1
+  agent:
+    mode: rules_only
+    heuristic_mutation_rate: 0.35
+

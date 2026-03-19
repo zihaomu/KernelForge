@@ -1,0 +1,24 @@
+{
+  "enabled": true,
+  "records": [
+    {
+      "source_type": "cloud_page",
+      "query": "seed",
+      "url": "https://www.openmp.org/spec-html/5.2/openmpsu30.html",
+      "title": "collapse Clause",
+      "patterns": [
+        "vectorize"
+      ],
+      "risk_level": "medium",
+      "confidence": 0.4,
+      "snippet": "collapse Clause HOME | OPENMP API Specification: \"Version 5.2 -- GIT rev 95b2e3a44\" [ next ] [ prev ] [ prev-tail ] [ tail ] [ up ] 4.4.3 collapse Clause Name: collapse Properties: unique Arguments Name Type Properties n expression of integer type default Directives distribute , do , for , loop , simd , taskloop Semantics The collapse clause associates one or more loops with the directive on which"
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "query_count": 3,
+    "seed_url_count": 4,
+    "record_count": 1,
+    "error_count": 0
+  }
+}

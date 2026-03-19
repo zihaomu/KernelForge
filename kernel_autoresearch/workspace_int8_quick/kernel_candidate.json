@@ -1,0 +1,13 @@
+{
+  "kernel_variant": "blocked",
+  "bm": 48,
+  "bn": 64,
+  "bk": 32,
+  "pack_a": true,
+  "pack_b": true,
+  "simd": true,
+  "threads": 4,
+  "unroll_k": 1,
+  "input_dtype": "i8",
+  "output_dtype": "i32"
+}

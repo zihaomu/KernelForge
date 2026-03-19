@@ -1,0 +1,1043 @@
+{
+  "source": "code_base_agent_gen",
+  "records": [
+    {
+      "repo": "sgl-kernel",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/sgl-kernel/research_packs/sgl-kernel.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "把 tile shape 做成独立策略层（small-M 与 regular-M 分支），便于后续 autotune。"
+    },
+    {
+      "repo": "sgl-kernel",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/sgl-kernel/research_packs/sgl-kernel.md",
+      "symbol": "",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "使用 128-bit pack 读写 + LSE 合并模式，作为分段 attention merge 标准实现。"
+    },
+    {
+      "repo": "sgl-kernel",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/sgl-kernel/research_packs/sgl-kernel.md",
+      "symbol": "",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "把 AVX512 VNNI pack + dpbf16 的 tinygemm 抽象成 CPU fallback 高性能路径。"
+    },
+    {
+      "repo": "sgl-kernel",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/sgl-kernel/research_packs/sgl-kernel.md",
+      "symbol": "",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "借鉴 FP8 unpack 到 BF16 再 GEMM 的 staged pipeline，便于无 GPU 环境测试。"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 tile/warp 调度与共享内存流水化骨架，再按目标架构细化。"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 tile/warp 调度与共享内存流水化骨架，再按目标架构细化。"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 tile/warp 调度与共享内存流水化骨架，再按目标架构细化。"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 tile/warp 调度与共享内存流水化骨架，再按目标架构细化。"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 tile/warp 调度与共享内存流水化骨架，再按目标架构细化。"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 tile/warp 调度与共享内存流水化骨架，再按目标架构细化。"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 tile/warp 调度与共享内存流水化骨架，再按目标架构细化。"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 tile/warp 调度与共享内存流水化骨架，再按目标架构细化。"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 tile/warp 调度与共享内存流水化骨架，再按目标架构细化。"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 tile/warp 调度与共享内存流水化骨架，再按目标架构细化。"
+    },
+    {
+      "repo": "MatmulTutorial",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MatmulTutorial/research_packs/MatmulTutorial.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 tile/warp 调度与共享内存流水化骨架，再按目标架构细化。"
+    },
+    {
+      "repo": "MNN",
+      "source_type": "snippet",
+      "source_path": "source/backend/cuda/execution/plugin/FmhaCommon/fused_multi_head_attention/gemm/mma_from_smem.h",
+      "symbol": "B2bGemm",
+      "patterns": [
+        "tiling",
+        "fuse"
+      ],
+      "backend": [
+        "gpu",
+        "cuda",
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "high",
+      "confidence": 10.0
+    },
+    {
+      "repo": "MNN",
+      "source_type": "snippet",
+      "source_path": "source/backend/cuda/execution/plugin/FmhaCommon/fused_multi_head_attention/gemm_kernel_utils.h",
+      "symbol": "DefaultGemm",
+      "patterns": [
+        "tiling",
+        "fuse"
+      ],
+      "backend": [
+        "gpu",
+        "cuda",
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "high",
+      "confidence": 20.0
+    },
+    {
+      "repo": "MNN",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MNN/research_packs/MNN.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "MNN",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/MNN/research_packs/MNN.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "ncnn",
+      "source_type": "snippet",
+      "source_path": "src/layer/mips/convolution_sgemm_pack4.h",
+      "symbol": "im2col_sgemm_pack4_msa",
+      "patterns": [
+        "tiling",
+        "vectorize",
+        "pack"
+      ],
+      "backend": [
+        "cpu",
+        "simd",
+        "mips"
+      ],
+      "dtype": [],
+      "risk_level": "low",
+      "confidence": 17.0
+    },
+    {
+      "repo": "ncnn",
+      "source_type": "snippet",
+      "source_path": "src/layer/mips/convolution_sgemm_pack4.h",
+      "symbol": "convolution_im2col_sgemm_pack4_msa",
+      "patterns": [
+        "tiling",
+        "vectorize",
+        "pack"
+      ],
+      "backend": [
+        "cpu",
+        "simd",
+        "mips"
+      ],
+      "dtype": [],
+      "risk_level": "low",
+      "confidence": 18.0
+    },
+    {
+      "repo": "ncnn",
+      "source_type": "snippet",
+      "source_path": "src/layer/mips/convolution_sgemm_int8.h",
+      "symbol": "im2col_sgemm_int8_msa",
+      "patterns": [
+        "tiling",
+        "vectorize"
+      ],
+      "backend": [
+        "cpu",
+        "simd",
+        "mips"
+      ],
+      "dtype": [
+        "int8"
+      ],
+      "risk_level": "low",
+      "confidence": 19.0
+    },
+    {
+      "repo": "ncnn",
+      "source_type": "snippet",
+      "source_path": "src/layer/mips/convolution_sgemm_int8.h",
+      "symbol": "convolution_im2col_sgemm_transform_kernel_int8_msa",
+      "patterns": [
+        "tiling",
+        "vectorize"
+      ],
+      "backend": [
+        "cpu",
+        "simd",
+        "mips"
+      ],
+      "dtype": [
+        "int8"
+      ],
+      "risk_level": "low",
+      "confidence": 20.0
+    },
+    {
+      "repo": "opencv-dnn",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/opencv-dnn/research_packs/opencv-dnn.md",
+      "symbol": "",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 pack/im2col/winograd 分支与 ISA 选择逻辑。"
+    },
+    {
+      "repo": "opencv-dnn",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/opencv-dnn/research_packs/opencv-dnn.md",
+      "symbol": "",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 pack/im2col/winograd 分支与 ISA 选择逻辑。"
+    },
+    {
+      "repo": "opencv-dnn",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/opencv-dnn/research_packs/opencv-dnn.md",
+      "symbol": "",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 pack/im2col/winograd 分支与 ISA 选择逻辑。"
+    },
+    {
+      "repo": "opencv-dnn",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/opencv-dnn/research_packs/opencv-dnn.md",
+      "symbol": "",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 pack/im2col/winograd 分支与 ISA 选择逻辑。"
+    },
+    {
+      "repo": "opencv-dnn",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/opencv-dnn/research_packs/opencv-dnn.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "opencv-dnn",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/opencv-dnn/research_packs/opencv-dnn.md",
+      "symbol": "",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 pack/im2col/winograd 分支与 ISA 选择逻辑。"
+    },
+    {
+      "repo": "opencv-dnn",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/opencv-dnn/research_packs/opencv-dnn.md",
+      "symbol": "",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 pack/im2col/winograd 分支与 ISA 选择逻辑。"
+    },
+    {
+      "repo": "sglang/sgl-kernel",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/sglang/sgl-kernel/research_packs/sgl-kernel.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "sglang/sgl-kernel",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/sglang/sgl-kernel/research_packs/sgl-kernel.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "sglang/sgl-kernel",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/sglang/sgl-kernel/research_packs/sgl-kernel.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "sglang/sgl-kernel",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/sglang/sgl-kernel/research_packs/sgl-kernel.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "sglang/sgl-kernel",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/sglang/sgl-kernel/research_packs/sgl-kernel.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "sglang/sgl-kernel",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/sglang/sgl-kernel/research_packs/sgl-kernel.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "snippet",
+      "source_path": "src/xnnpack/microfnptr.h",
+      "symbol": "xnn_hmp_qp8gemm_ukernel",
+      "patterns": [
+        "vectorize",
+        "pack"
+      ],
+      "backend": [
+        "cpu",
+        "simd"
+      ],
+      "dtype": [],
+      "risk_level": "low",
+      "confidence": 1.0
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "snippet",
+      "source_path": "src/xnnpack/microfnptr.h",
+      "symbol": "xnn_hmp_qp8gemm_bl_ukernel",
+      "patterns": [
+        "vectorize",
+        "pack"
+      ],
+      "backend": [
+        "cpu",
+        "simd"
+      ],
+      "dtype": [],
+      "risk_level": "low",
+      "confidence": 2.0
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "snippet",
+      "source_path": "src/xnnpack/microfnptr.h",
+      "symbol": "gemm_fused_ukernel",
+      "patterns": [
+        "fuse",
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "low",
+      "confidence": 3.0
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "snippet",
+      "source_path": "src/operators/convolution-nhwc.c",
+      "symbol": "xnn_hmp_igemm_ukernel",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [
+        "int32"
+      ],
+      "risk_level": "low",
+      "confidence": 5.0
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "snippet",
+      "source_path": "src/operators/deconvolution-nhwc.c",
+      "symbol": "xnn_ukernel",
+      "patterns": [
+        "vectorize"
+      ],
+      "backend": [
+        "cpu",
+        "simd"
+      ],
+      "dtype": [],
+      "risk_level": "low",
+      "confidence": 6.0
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "snippet",
+      "source_path": "src/operators/deconvolution-nhwc.c",
+      "symbol": "xnn_hmp_igemm_ukernel",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [
+        "int32"
+      ],
+      "risk_level": "low",
+      "confidence": 7.0
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/xnnpack/research_packs/xnnpack.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/xnnpack/research_packs/xnnpack.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/xnnpack/research_packs/xnnpack.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/xnnpack/research_packs/xnnpack.md",
+      "symbol": "",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 pack/im2col/winograd 分支与 ISA 选择逻辑。"
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/xnnpack/research_packs/xnnpack.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/xnnpack/research_packs/xnnpack.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/xnnpack/research_packs/xnnpack.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 shape-aware 调度与 tile 策略，保留回退路径。"
+    },
+    {
+      "repo": "xnnpack",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/xnnpack/research_packs/xnnpack.md",
+      "symbol": "",
+      "patterns": [
+        "pack"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "优先迁移 pack/im2col/winograd 分支与 ISA 选择逻辑。"
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "snippet",
+      "source_path": "src/cpu/aarch64/brgemm/jit_brgemm_kernel.cpp",
+      "symbol": "jit_brgemm_kernel",
+      "patterns": [
+        "vectorize",
+        "jit"
+      ],
+      "backend": [
+        "cpu",
+        "simd"
+      ],
+      "dtype": [
+        "int8"
+      ],
+      "risk_level": "high",
+      "confidence": 1.0
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "snippet",
+      "source_path": "src/cpu/x64/brgemm/jit_brdgmm_kernel.hpp",
+      "symbol": "jit_brdgmm_kernel",
+      "patterns": [
+        "vectorize",
+        "jit"
+      ],
+      "backend": [
+        "cpu",
+        "simd"
+      ],
+      "dtype": [
+        "int8"
+      ],
+      "risk_level": "high",
+      "confidence": 2.0
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "snippet",
+      "source_path": "src/cpu/x64/matmul/amx_blocking_heuristics.cpp",
+      "symbol": "matmul_amx_blocking_params_micro_t::get_copied_data_reusage_scores",
+      "patterns": [
+        "tiling",
+        "vectorize"
+      ],
+      "backend": [
+        "cpu",
+        "simd"
+      ],
+      "dtype": [
+        "fp32"
+      ],
+      "risk_level": "low",
+      "confidence": 5.0
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "snippet",
+      "source_path": "src/cpu/aarch64/brgemm/jit_brdgmm_kernel.hpp",
+      "symbol": "jit_brdgmm_kernel",
+      "patterns": [
+        "vectorize",
+        "jit"
+      ],
+      "backend": [
+        "cpu",
+        "simd"
+      ],
+      "dtype": [
+        "int8"
+      ],
+      "risk_level": "high",
+      "confidence": 7.0
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/oneDNN/research_packs/oneDNN.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "迁移 brgemm/gemm 的 blocked dispatch 与 JIT 配置分层。"
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/oneDNN/research_packs/oneDNN.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "迁移 brgemm/gemm 的 blocked dispatch 与 JIT 配置分层。"
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/oneDNN/research_packs/oneDNN.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "迁移 brgemm/gemm 的 blocked dispatch 与 JIT 配置分层。"
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/oneDNN/research_packs/oneDNN.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "迁移 brgemm/gemm 的 blocked dispatch 与 JIT 配置分层。"
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/oneDNN/research_packs/oneDNN.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "迁移 brgemm/gemm 的 blocked dispatch 与 JIT 配置分层。"
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/oneDNN/research_packs/oneDNN.md",
+      "symbol": "",
+      "patterns": [
+        "tiling"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "迁移 brgemm/gemm 的 blocked dispatch 与 JIT 配置分层。"
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/oneDNN/research_packs/oneDNN.md",
+      "symbol": "",
+      "patterns": [
+        "reorder"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "迁移 layout/reorder 抽象，降低不同内核布局耦合。"
+    },
+    {
+      "repo": "oneDNN",
+      "source_type": "research_pack",
+      "source_path": "code_base_agent_gen/oneDNN/research_packs/oneDNN.md",
+      "symbol": "",
+      "patterns": [
+        "reorder"
+      ],
+      "backend": [
+        "cpu"
+      ],
+      "dtype": [],
+      "risk_level": "medium",
+      "confidence": 0.6,
+      "hint_text": "迁移 layout/reorder 抽象，降低不同内核布局耦合。"
+    }
+  ],
+  "stats": {
+    "record_count": 62,
+    "skipped_entries": 0,
+    "pattern_histogram": {
+      "tiling": 41,
+      "pack": 17,
+      "vectorize": 11,
+      "fuse": 3,
+      "jit": 3,
+      "reorder": 2
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "total_iterations": 16,
+  "keep_count": 3,
+  "revert_count": 13,
+  "best": {
+    "ts": "2026-03-19T17:56:07",
+    "iteration": 10,
+    "bucket": "large",
+    "decision": "keep",
+    "score": 19.403706,
+    "latency_us": 5318.41,
+    "gflops": 403.783,
+    "reason": "score_improved",
+    "hypothesis": "bucket=large try blocked_pack_simd (bm=128,bn=64,bk=128,th=16,uk=2,simd=1)",
+    "log_messages": []
+  },
+  "run_log": "/home/moo/work/my_lab/kernel_codex/kernel_autoresearch_v2/workspace/run.log"
+}

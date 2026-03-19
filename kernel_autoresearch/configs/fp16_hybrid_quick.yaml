@@ -1,0 +1,83 @@
+paths:
+  code_base_agent_gen_dir: code_base_agent_gen
+  pattern_db_dir: kernel_autoresearch/data/pattern_db
+  runs_dir: kernel_autoresearch/data/runs
+  shapes_config: kernel_autoresearch/configs/shapes.yaml
+  cloud_sources_config: kernel_autoresearch/configs/cloud_sources.yaml
+  cpp_runner:
+    source_dir: kernel_autoresearch/cpp_runner
+    build_dir: kernel_autoresearch/cpp_runner/build
+    binary_name: kc_gemm_runner
+    cmake_build_type: Release
+
+search:
+  enabled: true
+  timeout_sec: 8
+  max_results_per_query: 3
+  user_agent: "kernel-autoresearch-bot/0.1"
+
+experiment:
+  input_dtype: f16
+  seed: 7
+  warmup_iters: 1
+  measure_iters: 3
+  verify: true
+  max_trials_per_bucket: 8
+  trial_timeout_sec: 20
+  buckets:
+    small:
+      max_volume: 2000000
+      alpha_throughput: 0.40
+    medium:
+      max_volume: 200000000
+      alpha_throughput: 0.50
+    large:
+      max_volume: null
+      alpha_throughput: 0.60
+
+scoring:
+  invalid_penalty: -1000000.0
+  risk_penalties:
+    low: 0.00
+    medium: 0.03
+    high: 0.08
+
+candidate_space:
+  block_m: [32, 64, 96, 128]
+  block_n: [32, 64, 96, 128]
+  block_k: [32, 64, 96, 128]
+  unroll_k: [1, 2]
+  thread_choices: [1, 2, 4, 8, 16]
+  allow_pack: true
+  allow_simd: true
+
+autoresearch:
+  workspace_dir: kernel_autoresearch/workspace_fp16_quick
+  artifact_file: kernel_candidate.json
+  results_tsv: results/results.tsv
+  state_file: orchestration_state.json
+  run_log: run.log
+  harness_manifest: kernel_autoresearch/harness/manifest.json
+  harness_files:
+    - kernel_autoresearch/harness/bench.py
+    - kernel_autoresearch/harness/reference.py
+  max_iterations: 8
+  patience_no_improve: 3
+  min_improve_ratio: 0.01
+  gates:
+    tiny_shape:
+      m: 32
+      n: 32
+      k: 32
+    checksum_atol: 1.0e-3
+    checksum_rtol: 1.0e-3
+    stability_repeat: 1
+  agent:
+    mode: hybrid
+    provider: openai
+    model: gpt-5.4
+    endpoint: https://codex.ai02.cn/v1/chat/completions
+    api_key_env: OPENAI_API_KEY
+    temperature: 0.2
+    max_tokens: 300
+    heuristic_mutation_rate: 0.35

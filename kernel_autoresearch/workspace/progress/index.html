@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Autoresearch Progress</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 18px; color: #222; }
+    h1 { margin-bottom: 8px; }
+    .meta { margin-bottom: 14px; color: #555; }
+    .cards { display: flex; gap: 12px; margin-bottom: 16px; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 10px 14px; min-width: 140px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .panel { border: 1px solid #ddd; border-radius: 8px; padding: 12px; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    th, td { border: 1px solid #ddd; padding: 6px 8px; vertical-align: top; }
+    th { background: #f7f7f7; }
+  </style>
+</head>
+<body>
+  <h1>Autoresearch Progress Dashboard</h1>
+  <div class="meta">Generated from <code>results.tsv</code> and <code>run.log</code> with timestamp mapping.</div>
+  <div class="cards">
+    <div class="card"><div>Total Iters</div><b>29</b></div>
+    <div class="card"><div>Keep</div><b>8</b></div>
+    <div class="card"><div>Revert</div><b>21</b></div>
+    <div class="card"><div>Best Score</div><b>10.7186</b></div>
+  </div>
+  <div class="grid">
+    <div class="panel">
+      <h3>Static Image (Score Curve)</h3>
+      <img src="score_curve.svg" style="max-width:100%; border:1px solid #eee"/>
+    </div>
+    <div class="panel">
+      <h3>Interactive Curves</h3>
+      <canvas id="chart1" height="120"></canvas>
+      <canvas id="chart2" height="120"></canvas>
+    </div>
+    <div class="panel">
+      <h3>Timestamp-Log Mapping</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ts</th><th>iter</th><th>bucket</th><th>proposal</th><th>decision</th><th>score</th>
+            <th>lat(ms)</th><th>gflops</th><th>reason</th><th>log messages</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>2026-03-18T17:55:52</td><td>1</td><td>medium</td><td></td><td>keep</td><td>1.1150</td><td>5.0186</td><td>20.3553</td><td>score_improved</td><td>iter=1 bucket=medium candidate=blocked|128|128|64|False|False|True|1|2 decision=keep score=1.115048 reason=score_improved</td></tr><tr><td>2026-03-18T17:55:52</td><td>2</td><td>medium</td><td></td><td>keep</td><td>7.7358</td><td>0.6691</td><td>129.8388</td><td>score_improved</td><td>iter=2 bucket=medium candidate=blocked_pack|128|128|128|True|True|False|16|4 decision=keep score=7.735797 reason=score_improved</td></tr><tr><td>2026-03-18T17:55:52</td><td>3</td><td>medium</td><td></td><td>revert</td><td>1.7218</td><td>3.2272</td><td>31.2117</td><td>improvement_below_threshold</td><td>iter=3 bucket=medium candidate=blocked_pack|128|128|128|True|True|False|1|2 decision=revert score=1.721841 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:52</td><td>4</td><td>medium</td><td></td><td>revert</td><td>1.0970</td><td>5.0655</td><td>19.8843</td><td>improvement_below_threshold</td><td>iter=4 bucket=medium candidate=blocked_pack|128|128|128|True|True|True|1|1 decision=revert score=1.096956 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:52</td><td>5</td><td>medium</td><td></td><td>revert</td><td>1.0834</td><td>5.2060</td><td>19.9298</td><td>improvement_below_threshold</td><td>iter=5 bucket=medium candidate=blocked_pack|128|128|64|True|True|True|1|2 decision=revert score=1.083359 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:52</td><td>6</td><td>medium</td><td></td><td>keep</td><td>10.0800</td><td>0.4600</td><td>146.2463</td><td>score_improved</td><td>iter=6 bucket=medium candidate=blocked_pack|128|128|96|True|True|False|16|1 decision=keep score=10.080043 reason=score_improved</td></tr><tr><td>2026-03-18T17:55:53</td><td>7</td><td>medium</td><td></td><td>revert</td><td>3.0903</td><td>1.5085</td><td>45.1913</td><td>improvement_below_threshold</td><td>iter=7 bucket=medium candidate=blocked_pack|128|128|96|True|True|True|4|1 decision=revert score=3.090283 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:53</td><td>8</td><td>medium</td><td></td><td>revert</td><td>3.1589</td><td>1.4796</td><td>46.3727</td><td>improvement_below_threshold</td><td>iter=8 bucket=medium candidate=blocked_pack|128|128|96|True|True|True|4|4 decision=revert score=3.158859 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:53</td><td>9</td><td>medium</td><td></td><td>keep</td><td>10.7186</td><td>0.4281</td><td>153.0660</td><td>score_improved</td><td>iter=9 bucket=medium candidate=blocked_pack|128|64|128|True|True|False|16|4 decision=keep score=10.718629 reason=score_improved</td></tr><tr><td>2026-03-18T17:55:53</td><td>10</td><td>medium</td><td></td><td>revert</td><td>3.4586</td><td>1.4202</td><td>54.4106</td><td>improvement_below_threshold</td><td>iter=10 bucket=medium candidate=blocked_pack|128|64|64|True|True|True|4|4 decision=revert score=3.458611 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:53</td><td>11</td><td>medium</td><td></td><td>revert</td><td>1.5427</td><td>3.6341</td><td>28.2135</td><td>improvement_below_threshold</td><td>iter=11 bucket=medium candidate=blocked_pack|128|64|96|True|True|False|1|4 decision=revert score=1.542699 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:53</td><td>12</td><td>medium</td><td></td><td>revert</td><td>5.2126</td><td>0.8872</td><td>75.3209</td><td>improvement_below_threshold</td><td>iter=12 bucket=medium candidate=blocked_pack|128|64|96|True|True|True|16|1 decision=revert score=5.212635 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:53</td><td>13</td><td>medium</td><td></td><td>revert</td><td>4.5241</td><td>1.0517</td><td>68.1507</td><td>improvement_below_threshold</td><td>iter=13 bucket=medium candidate=blocked_pack|128|96|64|True|True|False|4|2 decision=revert score=4.524101 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:53</td><td>14</td><td>medium</td><td></td><td>revert</td><td>5.0682</td><td>0.9416</td><td>76.6712</td><td>improvement_below_threshold</td><td>iter=14 bucket=medium candidate=blocked_pack|128|96|96|True|True|False|4|2 decision=revert score=5.068156 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:53</td><td>15</td><td>medium</td><td></td><td>revert</td><td>7.3915</td><td>0.6203</td><td>105.4055</td><td>improvement_below_threshold</td><td>iter=15 bucket=medium candidate=blocked_pack|128|96|96|True|True|True|16|4 decision=revert score=7.391541 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:55</td><td>16</td><td>large</td><td></td><td>keep</td><td>1.0130</td><td>69.0366</td><td>77.8568</td><td>score_improved</td><td>iter=16 bucket=large candidate=blocked|128|64|128|False|False|True|4|1 decision=keep score=1.013028 reason=score_improved</td></tr><tr><td>2026-03-18T17:55:56</td><td>17</td><td>large</td><td></td><td>keep</td><td>3.8739</td><td>18.0154</td><td>297.3240</td><td>score_improved</td><td>iter=17 bucket=large candidate=blocked_pack|128|128|64|True|True|True|16|1 decision=keep score=3.873935 reason=score_improved</td></tr><tr><td>2026-03-18T17:55:57</td><td>18</td><td>large</td><td></td><td>revert</td><td>1.5897</td><td>44.1031</td><td>122.3730</td><td>improvement_below_threshold</td><td>iter=18 bucket=large candidate=blocked_pack|128|128|96|True|True|False|4|4 decision=revert score=1.589665 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:55:58</td><td>19</td><td>large</td><td></td><td>keep</td><td>5.4157</td><td>12.9497</td><td>416.9885</td><td>score_improved</td><td>iter=19 bucket=large candidate=blocked_pack|128|64|128|True|True|False|16|1 decision=keep score=5.415682 reason=score_improved</td></tr><tr><td>2026-03-18T17:55:59</td><td>20</td><td>large</td><td></td><td>revert</td><td>5.4619</td><td>12.8197</td><td>420.1025</td><td>improvement_below_threshold</td><td>iter=20 bucket=large candidate=blocked_pack|128|64|128|True|True|False|16|2 decision=revert score=5.461854 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:56:00</td><td>21</td><td>large</td><td></td><td>revert</td><td>3.4280</td><td>21.1478</td><td>269.5885</td><td>improvement_below_threshold</td><td>iter=21 bucket=large candidate=blocked_pack|128|64|64|True|True|True|16|1 decision=revert score=3.428048 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:56:01</td><td>22</td><td>large</td><td></td><td>revert</td><td>3.5890</td><td>19.3381</td><td>274.4395</td><td>improvement_below_threshold</td><td>iter=22 bucket=large candidate=blocked_pack|128|96|128|True|True|True|16|1 decision=revert score=3.588971 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:56:02</td><td>23</td><td>large</td><td></td><td>keep</td><td>5.5419</td><td>12.3720</td><td>420.3145</td><td>score_improved</td><td>iter=23 bucket=large candidate=blocked_pack|128|96|64|True|True|False|16|1 decision=keep score=5.541878 reason=score_improved</td></tr><tr><td>2026-03-18T17:56:03</td><td>24</td><td>large</td><td></td><td>revert</td><td>5.3738</td><td>12.9793</td><td>412.2775</td><td>improvement_below_threshold</td><td>iter=24 bucket=large candidate=blocked_pack|128|96|64|True|True|False|16|4 decision=revert score=5.373836 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:56:05</td><td>25</td><td>large</td><td></td><td>revert</td><td>0.9825</td><td>71.2086</td><td>75.5303</td><td>improvement_below_threshold</td><td>iter=25 bucket=large candidate=blocked_pack|128|96|64|True|True|True|4|1 decision=revert score=0.982508 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:56:07</td><td>26</td><td>large</td><td></td><td>revert</td><td>1.5814</td><td>44.2905</td><td>121.6560</td><td>improvement_below_threshold</td><td>iter=26 bucket=large candidate=blocked_pack|64|128|128|True|True|False|4|2 decision=revert score=1.581375 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:56:08</td><td>27</td><td>large</td><td></td><td>revert</td><td>3.8286</td><td>18.3415</td><td>295.0385</td><td>improvement_below_threshold</td><td>iter=27 bucket=large candidate=blocked_pack|64|128|128|True|True|True|16|1 decision=revert score=3.828600 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:56:09</td><td>28</td><td>large</td><td></td><td>revert</td><td>0.9921</td><td>70.3243</td><td>76.1270</td><td>improvement_below_threshold</td><td>iter=28 bucket=large candidate=blocked_pack|64|128|128|True|True|True|4|2 decision=revert score=0.992092 reason=improvement_below_threshold</td></tr><tr><td>2026-03-18T17:56:11</td><td>29</td><td>large</td><td></td><td>revert</td><td>0.9998</td><td>70.0837</td><td>76.9365</td><td>improvement_below_threshold</td><td>iter=29 bucket=large candidate=blocked_pack|64|128|64|True|True|True|4|1 decision=revert score=0.999799 reason=improvement_below_threshold</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    const iters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
+    const scores = [1.115048, 7.735797, 1.721841, 1.096956, 1.083359, 10.080043, 3.090283, 3.158859, 10.718629, 3.458611, 1.542699, 5.212635, 4.524101, 5.068156, 7.391541, 1.013028, 3.873935, 1.589665, 5.415682, 5.461854, 3.428048, 3.588971, 5.541878, 5.373836, 0.982508, 1.581375, 3.8286, 0.992092, 0.999799];
+    const lat = [5.018596, 0.669064, 3.227165, 5.065507, 5.205964, 0.46002, 1.508465, 1.479563, 0.428146, 1.420189, 3.634078, 0.887187, 1.051678, 0.941616, 0.6203, 69.03655, 18.01535, 44.10305, 12.949695, 12.819705, 21.14781, 19.33806, 12.37205, 12.979255, 71.20855, 44.2905, 18.34148, 70.32425, 70.08375];
+    const gflops = [20.3553, 129.8388, 31.211667, 19.884333, 19.929767, 146.246267, 45.1913, 46.372667, 153.066033, 54.410567, 28.213533, 75.320867, 68.150733, 76.6712, 105.4055, 77.8568, 297.324, 122.373, 416.9885, 420.1025, 269.5885, 274.4395, 420.3145, 412.2775, 75.5303, 121.656, 295.0385, 76.127, 76.93655];
+    new Chart(document.getElementById('chart1'), {
+      type: 'line',
+      data: {
+        labels: iters,
+        datasets: [
+          {label: 'Score', data: scores, borderColor: '#1f77b4', yAxisID: 'y'},
+        ]
+      },
+      options: {responsive: true, interaction: {mode: 'index', intersect: false}}
+    });
+    new Chart(document.getElementById('chart2'), {
+      type: 'line',
+      data: {
+        labels: iters,
+        datasets: [
+          {label: 'Latency (ms)', data: lat, borderColor: '#d62728', yAxisID: 'y'},
+          {label: 'GFLOPS', data: gflops, borderColor: '#2ca02c', yAxisID: 'y1'}
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {type: 'linear', position: 'left'},
+          y1: {type: 'linear', position: 'right', grid: {drawOnChartArea: false}}
+        }
+      }
+    });
+  </script>
+</body>
+</html>

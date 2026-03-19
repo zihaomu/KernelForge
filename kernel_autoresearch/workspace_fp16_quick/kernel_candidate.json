@@ -1,0 +1,13 @@
+{
+  "kernel_variant": "blocked_pack",
+  "bm": 64,
+  "bn": 80,
+  "bk": 160,
+  "pack_a": false,
+  "pack_b": false,
+  "simd": false,
+  "threads": 16,
+  "unroll_k": 1,
+  "input_dtype": "f16",
+  "output_dtype": "f16"
+}

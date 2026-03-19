@@ -1,0 +1,31 @@
+[2026-03-18T17:55:52] iter=1 bucket=medium candidate=blocked|128|128|64|False|False|True|1|2 decision=keep score=1.115048 reason=score_improved
+[2026-03-18T17:55:52] iter=2 bucket=medium candidate=blocked_pack|128|128|128|True|True|False|16|4 decision=keep score=7.735797 reason=score_improved
+[2026-03-18T17:55:52] iter=3 bucket=medium candidate=blocked_pack|128|128|128|True|True|False|1|2 decision=revert score=1.721841 reason=improvement_below_threshold
+[2026-03-18T17:55:52] iter=4 bucket=medium candidate=blocked_pack|128|128|128|True|True|True|1|1 decision=revert score=1.096956 reason=improvement_below_threshold
+[2026-03-18T17:55:52] iter=5 bucket=medium candidate=blocked_pack|128|128|64|True|True|True|1|2 decision=revert score=1.083359 reason=improvement_below_threshold
+[2026-03-18T17:55:52] iter=6 bucket=medium candidate=blocked_pack|128|128|96|True|True|False|16|1 decision=keep score=10.080043 reason=score_improved
+[2026-03-18T17:55:53] iter=7 bucket=medium candidate=blocked_pack|128|128|96|True|True|True|4|1 decision=revert score=3.090283 reason=improvement_below_threshold
+[2026-03-18T17:55:53] iter=8 bucket=medium candidate=blocked_pack|128|128|96|True|True|True|4|4 decision=revert score=3.158859 reason=improvement_below_threshold
+[2026-03-18T17:55:53] iter=9 bucket=medium candidate=blocked_pack|128|64|128|True|True|False|16|4 decision=keep score=10.718629 reason=score_improved
+[2026-03-18T17:55:53] iter=10 bucket=medium candidate=blocked_pack|128|64|64|True|True|True|4|4 decision=revert score=3.458611 reason=improvement_below_threshold
+[2026-03-18T17:55:53] iter=11 bucket=medium candidate=blocked_pack|128|64|96|True|True|False|1|4 decision=revert score=1.542699 reason=improvement_below_threshold
+[2026-03-18T17:55:53] iter=12 bucket=medium candidate=blocked_pack|128|64|96|True|True|True|16|1 decision=revert score=5.212635 reason=improvement_below_threshold
+[2026-03-18T17:55:53] iter=13 bucket=medium candidate=blocked_pack|128|96|64|True|True|False|4|2 decision=revert score=4.524101 reason=improvement_below_threshold
+[2026-03-18T17:55:53] iter=14 bucket=medium candidate=blocked_pack|128|96|96|True|True|False|4|2 decision=revert score=5.068156 reason=improvement_below_threshold
+[2026-03-18T17:55:53] iter=15 bucket=medium candidate=blocked_pack|128|96|96|True|True|True|16|4 decision=revert score=7.391541 reason=improvement_below_threshold
+[2026-03-18T17:55:53] move_on bucket=medium reason=patience_exceeded
+[2026-03-18T17:55:55] iter=16 bucket=large candidate=blocked|128|64|128|False|False|True|4|1 decision=keep score=1.013028 reason=score_improved
+[2026-03-18T17:55:56] iter=17 bucket=large candidate=blocked_pack|128|128|64|True|True|True|16|1 decision=keep score=3.873935 reason=score_improved
+[2026-03-18T17:55:57] iter=18 bucket=large candidate=blocked_pack|128|128|96|True|True|False|4|4 decision=revert score=1.589665 reason=improvement_below_threshold
+[2026-03-18T17:55:58] iter=19 bucket=large candidate=blocked_pack|128|64|128|True|True|False|16|1 decision=keep score=5.415682 reason=score_improved
+[2026-03-18T17:55:59] iter=20 bucket=large candidate=blocked_pack|128|64|128|True|True|False|16|2 decision=revert score=5.461854 reason=improvement_below_threshold
+[2026-03-18T17:56:00] iter=21 bucket=large candidate=blocked_pack|128|64|64|True|True|True|16|1 decision=revert score=3.428048 reason=improvement_below_threshold
+[2026-03-18T17:56:01] iter=22 bucket=large candidate=blocked_pack|128|96|128|True|True|True|16|1 decision=revert score=3.588971 reason=improvement_below_threshold
+[2026-03-18T17:56:02] iter=23 bucket=large candidate=blocked_pack|128|96|64|True|True|False|16|1 decision=keep score=5.541878 reason=score_improved
+[2026-03-18T17:56:03] iter=24 bucket=large candidate=blocked_pack|128|96|64|True|True|False|16|4 decision=revert score=5.373836 reason=improvement_below_threshold
+[2026-03-18T17:56:05] iter=25 bucket=large candidate=blocked_pack|128|96|64|True|True|True|4|1 decision=revert score=0.982508 reason=improvement_below_threshold
+[2026-03-18T17:56:07] iter=26 bucket=large candidate=blocked_pack|64|128|128|True|True|False|4|2 decision=revert score=1.581375 reason=improvement_below_threshold
+[2026-03-18T17:56:08] iter=27 bucket=large candidate=blocked_pack|64|128|128|True|True|True|16|1 decision=revert score=3.828600 reason=improvement_below_threshold
+[2026-03-18T17:56:09] iter=28 bucket=large candidate=blocked_pack|64|128|128|True|True|True|4|2 decision=revert score=0.992092 reason=improvement_below_threshold
+[2026-03-18T17:56:11] iter=29 bucket=large candidate=blocked_pack|64|128|64|True|True|True|4|1 decision=revert score=0.999799 reason=improvement_below_threshold
+[2026-03-18T17:56:11] move_on bucket=large reason=patience_exceeded

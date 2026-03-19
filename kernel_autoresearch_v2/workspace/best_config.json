@@ -1,0 +1,44 @@
+{
+  "best_by_bucket": {
+    "medium": {
+      "score": 7.157048359898793,
+      "candidate": {
+        "kernel_variant": "blocked_pack",
+        "block_m": 128,
+        "block_n": 64,
+        "block_k": 128,
+        "pack_a": true,
+        "pack_b": true,
+        "simd": true,
+        "threads": 16,
+        "unroll_k": 1
+      },
+      "candidate_signature": "blocked_pack|128|64|128|True|True|True|16|1"
+    },
+    "large": {
+      "score": 19.403705835843702,
+      "candidate": {
+        "kernel_variant": "blocked_pack_simd",
+        "block_m": 128,
+        "block_n": 64,
+        "block_k": 128,
+        "pack_a": true,
+        "pack_b": true,
+        "simd": true,
+        "threads": 16,
+        "unroll_k": 2
+      },
+      "candidate_signature": "blocked_pack_simd|128|64|128|True|True|True|16|2"
+    }
+  },
+  "baseline_by_bucket": {
+    "medium": {
+      "avg_latency_us": 5019.840666666666,
+      "avg_gflops": 18.734333333333336
+    },
+    "large": {
+      "avg_latency_us": 103197.0,
+      "avg_gflops": 20.8096
+    }
+  }
+}

@@ -64,3 +64,7 @@ CPU算子：
 - conv1x1
 - conv3x3
 
+
+实验记录：
+
+kerne_autoresearch: 目前已经有一套可以跑通的代码，但是缺少无限迭代的program的设计。

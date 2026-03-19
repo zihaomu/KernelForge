@@ -1,0 +1,30 @@
+{
+  "best_candidate_by_bucket": {
+    "medium": {
+      "kernel_variant": "blocked_pack",
+      "bm": 128,
+      "bn": 64,
+      "bk": 128,
+      "pack_a": true,
+      "pack_b": true,
+      "simd": false,
+      "threads": 16,
+      "unroll_k": 4
+    },
+    "large": {
+      "kernel_variant": "blocked_pack",
+      "bm": 128,
+      "bn": 96,
+      "bk": 64,
+      "pack_a": true,
+      "pack_b": true,
+      "simd": false,
+      "threads": 16,
+      "unroll_k": 1
+    }
+  },
+  "best_score_by_bucket": {
+    "medium": 10.718629312316104,
+    "large": 5.5418780986397405
+  }
+}

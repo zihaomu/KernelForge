@@ -1,0 +1,58 @@
+{
+  "iteration": 16,
+  "bucket": "large",
+  "hypothesis": "bucket=large try blocked_pack_simd (bm=64,bn=128,bk=64,th=4,uk=1,simd=1)",
+  "candidate": {
+    "kernel_variant": "blocked_pack_simd",
+    "block_m": 64,
+    "block_n": 128,
+    "block_k": 64,
+    "pack_a": true,
+    "pack_b": true,
+    "simd": true,
+    "threads": 4,
+    "unroll_k": 1
+  },
+  "gate": {
+    "correctness_pass": true,
+    "failure_stage": "",
+    "reason": "ok",
+    "rows": [
+      {
+        "valid": true,
+        "kernel_variant": "blocked_pack_simd",
+        "m": 1024,
+        "n": 1024,
+        "k": 1024,
+        "bm": 64,
+        "bn": 128,
+        "bk": 64,
+        "pack_a": true,
+        "pack_b": true,
+        "simd": true,
+        "threads": 4,
+        "unroll_k": 1,
+        "latency_ms_p50": 17.7699,
+        "latency_ms_p95": 18.125,
+        "gflops": 120.85,
+        "max_abs_err": 0,
+        "max_rel_err": 0,
+        "output_sum": -8289.11,
+        "output_l2": 119451000.0,
+        "shape_name": "s4_1024"
+      }
+    ],
+    "avg_latency_us": 17769.9,
+    "avg_gflops": 120.85,
+    "candidate_signature": "blocked_pack_simd|64|128|64|True|True|True|4|1"
+  },
+  "score": 5.807411347328454,
+  "decision": {
+    "decision": "revert",
+    "reason": "improvement_below_threshold",
+    "new_best_score": 19.403705835843702,
+    "improved": false,
+    "threshold": 0.19403705835843701,
+    "delta": -13.596294488515248
+  }
+}

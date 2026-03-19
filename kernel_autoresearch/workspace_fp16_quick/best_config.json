@@ -1,0 +1,34 @@
+{
+  "best_candidate_by_bucket": {
+    "medium": {
+      "kernel_variant": "blocked_pack",
+      "bm": 64,
+      "bn": 80,
+      "bk": 160,
+      "pack_a": false,
+      "pack_b": false,
+      "simd": false,
+      "threads": 16,
+      "unroll_k": 1,
+      "input_dtype": "f16",
+      "output_dtype": "f16"
+    },
+    "large": {
+      "kernel_variant": "blocked",
+      "bm": 64,
+      "bn": 64,
+      "bk": 64,
+      "pack_a": false,
+      "pack_b": false,
+      "simd": true,
+      "threads": 4,
+      "unroll_k": 2,
+      "input_dtype": "f16",
+      "output_dtype": "f16"
+    }
+  },
+  "best_score_by_bucket": {
+    "medium": 8.486915657581449,
+    "large": 1.0
+  }
+}

@@ -1,0 +1,9 @@
+[2026-03-19T18:13:43] iter=1 bucket=medium proposal=agent_heuristic candidate=blocked_pack|96|96|96|True|True|True|16|2|i8|i32 decision=keep score=1.511399 reason=score_improved note=heuristic_after_openai_fail
+[2026-03-19T18:13:43] iter=2 bucket=medium proposal=agent_heuristic candidate=naive|0|0|0|False|False|False|1|1|i8|i32 decision=revert score=0.061156 reason=improvement_below_threshold note=heuristic_after_openai_fail
+[2026-03-19T18:13:43] iter=3 bucket=medium proposal=agent_heuristic candidate=blocked_pack|80|96|128|True|True|True|16|2|i8|i32 decision=keep score=2.306105 reason=score_improved note=heuristic_after_openai_fail
+[2026-03-19T18:13:43] iter=4 bucket=medium proposal=agent_heuristic candidate=blocked_pack|80|96|128|True|True|True|16|1|i8|i32 decision=revert score=2.178438 reason=improvement_below_threshold note=heuristic_after_openai_fail
+[2026-03-19T18:13:43] iter=5 bucket=medium proposal=agent_heuristic candidate=blocked|64|64|96|False|False|True|1|2|i8|i32 decision=revert score=0.284905 reason=improvement_below_threshold note=heuristic_after_openai_fail
+[2026-03-19T18:13:43] iter=6 bucket=medium proposal=agent_heuristic candidate=blocked_pack|80|112|128|False|False|False|16|1|i8|i32 decision=revert score=2.141676 reason=improvement_below_threshold note=heuristic_after_openai_fail
+[2026-03-19T18:13:43] move_on bucket=medium reason=patience_exceeded
+[2026-03-19T18:13:44] iter=7 bucket=large proposal=agent_heuristic candidate=blocked|48|32|96|False|False|True|4|2|i8|i32 decision=revert score=0.850243 reason=improvement_below_threshold note=heuristic_after_openai_fail
+[2026-03-19T18:13:45] iter=8 bucket=large proposal=agent_heuristic candidate=blocked|48|64|32|True|True|True|4|1|i8|i32 decision=keep score=1.077668 reason=score_improved note=heuristic_after_openai_fail

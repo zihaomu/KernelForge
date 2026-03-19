@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "status": "completed",
+  "iteration": 8,
+  "max_iterations": 8,
+  "bucket_order": [
+    "medium",
+    "large"
+  ],
+  "active_bucket_idx": 0,
+  "no_improve_count": 1,
+  "patience_no_improve": 3,
+  "candidate_cursor_by_bucket": {
+    "medium": 8,
+    "large": 0
+  },
+  "best_score_by_bucket": {
+    "medium": 8.486915657581449,
+    "large": 1.0
+  },
+  "best_candidate_by_bucket": {
+    "medium": {
+      "kernel_variant": "blocked_pack",
+      "bm": 64,
+      "bn": 80,
+      "bk": 160,
+      "pack_a": false,
+      "pack_b": false,
+      "simd": false,
+      "threads": 16,
+      "unroll_k": 1,
+      "input_dtype": "f16",
+      "output_dtype": "f16"
+    },
+    "large": {
+      "kernel_variant": "blocked",
+      "bm": 64,
+      "bn": 64,
+      "bk": 64,
+      "pack_a": false,
+      "pack_b": false,
+      "simd": true,
+      "threads": 4,
+      "unroll_k": 2,
+      "input_dtype": "f16",
+      "output_dtype": "f16"
+    }
+  },
+  "baseline_by_bucket": {
+    "medium": {
+      "avg_latency_ms": 11.951135333333333,
+      "avg_gflops": 7.185156666666667
+    },
+    "large": {
+      "avg_latency_ms": 599.669,
+      "avg_gflops": 8.95645
+    }
+  },
+  "seen_signatures_by_bucket": {
+    "medium": [
+      "blocked|64|128|128|False|False|True|4|1|f16|f16",
+      "blocked_pack|96|96|96|True|True|True|16|2|f16|f16",
+      "naive|0|0|0|False|False|False|1|1|f16|f16",
+      "blocked_pack|80|96|128|True|True|True|16|2|f16|f16",
+      "blocked_pack|80|96|128|True|True|True|16|1|f16|f16",
+      "blocked|64|64|96|False|False|True|1|2|f16|f16",
+      "blocked_pack|80|112|128|False|False|False|16|1|f16|f16",
+      "blocked_pack|64|80|160|False|False|False|16|1|f16|f16",
+      "blocked_pack|48|80|128|True|True|False|16|2|f16|f16"
+    ],
+    "large": [
+      "blocked|64|64|64|False|False|True|4|2|f16|f16"
+    ]
+  },
+  "history_tail": [
+    {
+      "iteration": 1,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|96|96|96|True|True|True|16|2|f16|f16",
+      "proposal_source": "agent_heuristic",
+      "decision": "keep",
+      "reason": "score_improved",
+      "score": 6.517633855846924,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 2,
+      "bucket": "medium",
+      "candidate_signature": "naive|0|0|0|False|False|False|1|1|f16|f16",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 0.15960716570082317,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 3,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|80|96|128|True|True|True|16|2|f16|f16",
+      "proposal_source": "agent_heuristic",
+      "decision": "keep",
+      "reason": "score_improved",
+      "score": 7.274471425080975,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 4,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|80|96|128|True|True|True|16|1|f16|f16",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 7.2053380968367495,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 5,
+      "bucket": "medium",
+      "candidate_signature": "blocked|64|64|96|False|False|True|1|2|f16|f16",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 0.29203760979621574,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 6,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|80|112|128|False|False|False|16|1|f16|f16",
+      "proposal_source": "agent_heuristic",
+      "decision": "keep",
+      "reason": "score_improved",
+      "score": 8.31994687596918,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 7,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|64|80|160|False|False|False|16|1|f16|f16",
+      "proposal_source": "agent_heuristic",
+      "decision": "keep",
+      "reason": "score_improved",
+      "score": 8.486915657581449,
+      "correctness_pass": true
+    },
+    {
+      "iteration": 8,
+      "bucket": "medium",
+      "candidate_signature": "blocked_pack|48|80|128|True|True|False|16|2|f16|f16",
+      "proposal_source": "agent_heuristic",
+      "decision": "revert",
+      "reason": "improvement_below_threshold",
+      "score": 8.334587448973314,
+      "correctness_pass": true
+    }
+  ]
+}

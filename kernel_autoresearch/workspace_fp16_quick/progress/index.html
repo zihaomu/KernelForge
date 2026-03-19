@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Autoresearch Progress</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 18px; color: #222; }
+    h1 { margin-bottom: 8px; }
+    .meta { margin-bottom: 14px; color: #555; }
+    .cards { display: flex; gap: 12px; margin-bottom: 16px; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 10px 14px; min-width: 140px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .panel { border: 1px solid #ddd; border-radius: 8px; padding: 12px; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    th, td { border: 1px solid #ddd; padding: 6px 8px; vertical-align: top; }
+    th { background: #f7f7f7; }
+  </style>
+</head>
+<body>
+  <h1>Autoresearch Progress Dashboard</h1>
+  <div class="meta">Generated from <code>results.tsv</code> and <code>run.log</code> with timestamp mapping.</div>
+  <div class="cards">
+    <div class="card"><div>Total Iters</div><b>8</b></div>
+    <div class="card"><div>Keep</div><b>4</b></div>
+    <div class="card"><div>Revert</div><b>4</b></div>
+    <div class="card"><div>Best Score</div><b>8.4869</b></div>
+  </div>
+  <div class="grid">
+    <div class="panel">
+      <h3>Static Image (Score Curve)</h3>
+      <img src="score_curve.svg" style="max-width:100%; border:1px solid #eee"/>
+    </div>
+    <div class="panel">
+      <h3>Interactive Curves</h3>
+      <canvas id="chart1" height="120"></canvas>
+      <canvas id="chart2" height="120"></canvas>
+    </div>
+    <div class="panel">
+      <h3>Timestamp-Log Mapping</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ts</th><th>iter</th><th>bucket</th><th>proposal</th><th>decision</th><th>score</th>
+            <th>lat(ms)</th><th>gflops</th><th>reason</th><th>log messages</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>2026-03-19T18:26:28</td><td>1</td><td>medium</td><td>agent_heuristic</td><td>keep</td><td>6.5176</td><td>1.6973</td><td>43.0680</td><td>score_improved</td><td>iter=1 bucket=medium proposal=agent_heuristic candidate=blocked_pack|96|96|96|True|True|True|16|2|f16|f16 decision=keep score=6.517634 reason=score_improved note=heuristic_after_openai_fail</td></tr><tr><td>2026-03-19T18:26:29</td><td>2</td><td>medium</td><td>agent_heuristic</td><td>revert</td><td>0.1596</td><td>83.9668</td><td>1.2709</td><td>improvement_below_threshold</td><td>iter=2 bucket=medium proposal=agent_heuristic candidate=naive|0|0|0|False|False|False|1|1|f16|f16 decision=revert score=0.159607 reason=improvement_below_threshold note=heuristic_after_openai_fail</td></tr><tr><td>2026-03-19T18:26:29</td><td>3</td><td>medium</td><td>agent_heuristic</td><td>keep</td><td>7.2745</td><td>1.5342</td><td>48.5666</td><td>score_improved</td><td>iter=3 bucket=medium proposal=agent_heuristic candidate=blocked_pack|80|96|128|True|True|True|16|2|f16|f16 decision=keep score=7.274471 reason=score_improved note=heuristic_after_openai_fail</td></tr><tr><td>2026-03-19T18:26:29</td><td>4</td><td>medium</td><td>agent_heuristic</td><td>revert</td><td>7.2053</td><td>1.5479</td><td>48.0673</td><td>improvement_below_threshold</td><td>iter=4 bucket=medium proposal=agent_heuristic candidate=blocked_pack|80|96|128|True|True|True|16|1|f16|f16 decision=revert score=7.205338 reason=improvement_below_threshold note=heuristic_after_openai_fail</td></tr><tr><td>2026-03-19T18:26:30</td><td>5</td><td>medium</td><td>agent_heuristic</td><td>revert</td><td>0.2920</td><td>44.7952</td><td>2.2797</td><td>improvement_below_threshold</td><td>iter=5 bucket=medium proposal=agent_heuristic candidate=blocked|64|64|96|False|False|True|1|2|f16|f16 decision=revert score=0.292038 reason=improvement_below_threshold note=heuristic_after_openai_fail</td></tr><tr><td>2026-03-19T18:26:30</td><td>6</td><td>medium</td><td>agent_heuristic</td><td>keep</td><td>8.3199</td><td>1.3510</td><td>55.9971</td><td>score_improved</td><td>iter=6 bucket=medium proposal=agent_heuristic candidate=blocked_pack|80|112|128|False|False|False|16|1|f16|f16 decision=keep score=8.319947 reason=score_improved note=heuristic_after_openai_fail</td></tr><tr><td>2026-03-19T18:26:30</td><td>7</td><td>medium</td><td>agent_heuristic</td><td>keep</td><td>8.4869</td><td>1.3580</td><td>58.7259</td><td>score_improved</td><td>iter=7 bucket=medium proposal=agent_heuristic candidate=blocked_pack|64|80|160|False|False|False|16|1|f16|f16 decision=keep score=8.486916 reason=score_improved note=heuristic_after_openai_fail</td></tr><tr><td>2026-03-19T18:26:31</td><td>8</td><td>medium</td><td>agent_heuristic</td><td>revert</td><td>8.3346</td><td>1.3739</td><td>57.2714</td><td>improvement_below_threshold</td><td>iter=8 bucket=medium proposal=agent_heuristic candidate=blocked_pack|48|80|128|True|True|False|16|2|f16|f16 decision=revert score=8.334587 reason=improvement_below_threshold note=heuristic_after_openai_fail</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    const iters = [1, 2, 3, 4, 5, 6, 7, 8];
+    const scores = [6.517634, 0.159607, 7.274471, 7.205338, 0.292038, 8.319947, 8.486916, 8.334587];
+    const lat = [1.697306, 83.966833, 1.534232, 1.547899, 44.795167, 1.350952, 1.357991, 1.373949];
+    const gflops = [43.068033, 1.27093, 48.566567, 48.067267, 2.279707, 55.997067, 58.725933, 57.2714];
+    new Chart(document.getElementById('chart1'), {
+      type: 'line',
+      data: {
+        labels: iters,
+        datasets: [
+          {label: 'Score', data: scores, borderColor: '#1f77b4', yAxisID: 'y'},
+        ]
+      },
+      options: {responsive: true, interaction: {mode: 'index', intersect: false}}
+    });
+    new Chart(document.getElementById('chart2'), {
+      type: 'line',
+      data: {
+        labels: iters,
+        datasets: [
+          {label: 'Latency (ms)', data: lat, borderColor: '#d62728', yAxisID: 'y'},
+          {label: 'GFLOPS', data: gflops, borderColor: '#2ca02c', yAxisID: 'y1'}
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {type: 'linear', position: 'left'},
+          y1: {type: 'linear', position: 'right', grid: {drawOnChartArea: false}}
+        }
+      }
+    });
+  </script>
+</body>
+</html>

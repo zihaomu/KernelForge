@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "path": "kernel_autoresearch_v2/harness/bench.py",
+      "sha256": "0b98fea35eff791f8a6300d0a0a55ce0dd52eab3f192a4fe2e7b9ce352da46d7"
+    },
+    {
+      "path": "kernel_autoresearch_v2/harness/reference.py",
+      "sha256": "28e5dde3c1c3a6bdd1a05acdfba886ef3056c5938491ee319b94320e8daf3144"
+    }
+  ]
+}
