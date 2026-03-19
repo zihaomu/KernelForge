@@ -1,0 +1,18 @@
+kernels:
+  cpu:
+    gemm: kernel/cpu_kernel/gemm
+    softmax: kernel/cpu_kernel/softmax
+    elementwise: kernel/cpu_kernel/elementwise
+    reduce: kernel/cpu_kernel/reduce
+    rmsnorm: kernel/cpu_kernel/rmsnorm
+    topk: kernel/cpu_kernel/topk
+    conv_3x3: kernel/cpu_kernel/conv_3x3
+
+  gpu:
+    gemm: kernel/gpu_kernel/gemm
+    softmax: kernel/gpu_kernel/softmax
+    elementwise_add: kernel/gpu_kernel/elementwise_add
+    reduce: kernel/gpu_kernel/reduce
+    rmsnorm: kernel/gpu_kernel/rmsnorm
+    topk: kernel/gpu_kernel/topk
+

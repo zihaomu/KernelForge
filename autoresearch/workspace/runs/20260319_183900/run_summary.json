@@ -1,0 +1,40 @@
+{
+  "run_id": "20260319_183900",
+  "run_dir": "/home/moo/work/my_lab/kernel_codex/autoresearch/workspace/runs/20260319_183900",
+  "state": "/home/moo/work/my_lab/kernel_codex/autoresearch/workspace/runs/20260319_183900/state.json",
+  "portfolio": "/home/moo/work/my_lab/kernel_codex/autoresearch/configs/portfolios/all_ops.yaml",
+  "task_summaries": [
+    {
+      "status": "completed",
+      "iterations": 11,
+      "best_score": 9.756482257961345,
+      "best_candidate_signature": "blocked_pack_simd|96|64|96|True|True|True|16|2",
+      "best_candidate": {
+        "kernel_variant": "blocked_pack_simd",
+        "block_m": 96,
+        "block_n": 64,
+        "block_k": 96,
+        "pack_a": true,
+        "pack_b": true,
+        "simd": true,
+        "threads": 16,
+        "unroll_k": 2
+      },
+      "baseline_latency_us": 30497.780250000003,
+      "baseline_gflops": 18.769575,
+      "op_id": "cpu_gemm",
+      "task_run_dir": "/home/moo/work/my_lab/kernel_codex/autoresearch/workspace/runs/20260319_183900/cpu_gemm"
+    },
+    {
+      "status": "skipped",
+      "reason": "torch_import_failed:No module named 'torch'",
+      "iterations": 0,
+      "best_score": 0.0,
+      "best_candidate_signature": "",
+      "op_id": "gpu_gemm",
+      "task_run_dir": "/home/moo/work/my_lab/kernel_codex/autoresearch/workspace/runs/20260319_183900/gpu_gemm"
+    }
+  ],
+  "portfolio_tsv": "/home/moo/work/my_lab/kernel_codex/autoresearch/workspace/runs/20260319_183900/portfolio.tsv",
+  "index_md": "/home/moo/work/my_lab/kernel_codex/autoresearch/workspace/runs/20260319_183900/index.md"
+}

@@ -1,0 +1,20 @@
+paths:
+  workspace_dir: autoresearch/workspace
+  ops_registry: autoresearch/registry/ops_index.yaml
+  kernels_map: autoresearch/registry/kernels_map.yaml
+  default_portfolio: autoresearch/configs/portfolios/all_ops.yaml
+
+platform_configs:
+  cpu: autoresearch/configs/platforms/cpu_x86.yaml
+  gpu: autoresearch/configs/platforms/gpu_rtx4090.yaml
+
+execution:
+  seed: 7
+  max_iterations_per_task: 20
+  patience_no_improve: 6
+  min_improve_ratio: 0.01
+  stop_on_error: false
+
+logging:
+  keep_iter_details: true
+

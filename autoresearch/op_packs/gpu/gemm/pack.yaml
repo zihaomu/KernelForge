@@ -1,0 +1,19 @@
+op_id: gpu_gemm
+metric:
+  alpha_throughput: 0.7
+task_limits:
+  max_iterations: 12
+  patience_no_improve: 4
+shapes:
+  - name: g1_1024
+    m: 1024
+    n: 1024
+    k: 1024
+  - name: g2_2048x1024x2048
+    m: 2048
+    n: 1024
+    k: 2048
+candidate_space:
+  dtypes: [fp32, fp16, bf16]
+  allow_tf32: [false, true]
+

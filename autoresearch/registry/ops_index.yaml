@@ -1,0 +1,15 @@
+ops:
+  - op_id: cpu_gemm
+    name: CPU GEMM
+    platform: cpu
+    enabled: true
+    pack_module: autoresearch.op_packs.cpu.gemm.pack
+    pack_config: autoresearch/op_packs/cpu/gemm/pack.yaml
+
+  - op_id: gpu_gemm
+    name: GPU GEMM
+    platform: gpu
+    enabled: true
+    pack_module: autoresearch.op_packs.gpu.gemm.pack
+    pack_config: autoresearch/op_packs/gpu/gemm/pack.yaml
+

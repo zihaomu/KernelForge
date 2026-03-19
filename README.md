@@ -68,3 +68,36 @@ CPU算子：
 实验记录：
 
 kerne_autoresearch: 目前已经有一套可以跑通的代码，但是缺少无限迭代的program的设计。
+
+
+## 统一全算子 Autoresearch（CPU + GPU）
+
+新增目录：`autoresearch/`，用于做“控制面”而不是具体算子实现本身。
+
+- `kernel/`：继续放算子源码资产（cpu_kernel / gpu_kernel）
+- `autoresearch/`：统一调度、评测、决策、日志、看板
+- `autoresearch/op_packs/`：按算子组织优化策略（当前已接入 `cpu_gemm`、`gpu_gemm`）
+- `autoresearch/configs/portfolios/all_ops.yaml`：定义本次要跑的算子组合
+
+快速启动：
+
+```bash
+bash autoresearch/run_autoresearch.sh
+```
+
+或：
+
+```bash
+uv run python -m autoresearch.core.cli run \
+  --config autoresearch/configs/global.yaml \
+  --portfolio autoresearch/configs/portfolios/all_ops.yaml
+```
+
+产物目录：
+
+`autoresearch/workspace/runs/<run_id>/`
+
+- `run_summary.json`：本次全局结果
+- `portfolio.tsv` / `index.md`：跨算子结果看板
+- `<op_id>/results.tsv`：该算子每一步决策与指标
+- `<op_id>/iter_details/iter_*.json`：每轮详细数据

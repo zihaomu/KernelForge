@@ -1,0 +1,2 @@
+"""CPU C++ runner adapter."""
+

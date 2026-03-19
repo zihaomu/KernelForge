@@ -1,0 +1,12 @@
+iteration	candidate_signature	correctness_pass	avg_latency_us	avg_gflops	score	best_score_before	best_score_after	decision	reason
+1	blocked_pack_simd|32|32|16|True|True|True|4|4	1	7893.782	75.887775	3.971284	1.000000	3.971284	keep	score_improved
+2	blocked|32|128|32|False|False|False|8|2	1	4338.101	119.663525	6.637325	3.971284	6.637325	keep	score_improved
+3	blocked_pack_simd|32|16|32|True|True|True|16|4	1	3892.310	138.059325	7.547449	6.637325	7.547449	keep	score_improved
+4	blocked_pack|96|64|16|True|True|False|8|4	1	3357.762	106.331050	7.032154	7.547449	7.547449	revert	improvement_below_threshold
+5	blocked_pack_simd|96|64|96|True|True|True|16|2	1	2469.423	150.670150	9.756482	7.547449	9.756482	keep	score_improved
+6	blocked_pack|128|32|96|True|True|True|4|4	1	7148.090	71.498175	3.992181	9.756482	9.756482	revert	improvement_below_threshold
+7	blocked_pack|128|64|32|True|True|True|8|2	1	3257.841	122.546475	7.661936	9.756482	9.756482	revert	improvement_below_threshold
+8	blocked_pack|32|32|96|True|True|True|2|4	1	14332.400	43.604925	2.245059	9.756482	9.756482	revert	improvement_below_threshold
+9	blocked_pack|128|128|64|True|True|False|2|1	1	9841.381	54.908025	2.994798	9.756482	9.756482	revert	improvement_below_threshold
+10	blocked|96|96|32|False|False|True|4|1	1	6279.246	76.696800	4.394505	9.756482	9.756482	revert	improvement_below_threshold
+11	blocked_pack_simd|32|128|16|True|True|True|4|2	1	5284.673	102.861950	5.596544	9.756482	9.756482	revert	improvement_below_threshold

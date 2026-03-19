@@ -1,0 +1,7 @@
+{
+  "status": "skipped",
+  "reason": "torch_import_failed:No module named 'torch'",
+  "iterations": 0,
+  "best_score": 0.0,
+  "best_candidate_signature": ""
+}

@@ -1,0 +1,11 @@
+iter=1 cand=blocked_pack_simd|32|32|16|True|True|True|4|4 decision=keep score=3.971284 reason=score_improved
+iter=2 cand=blocked|32|128|32|False|False|False|8|2 decision=keep score=6.637325 reason=score_improved
+iter=3 cand=blocked_pack_simd|32|16|32|True|True|True|16|4 decision=keep score=7.547449 reason=score_improved
+iter=4 cand=blocked_pack|96|64|16|True|True|False|8|4 decision=revert score=7.032154 reason=improvement_below_threshold
+iter=5 cand=blocked_pack_simd|96|64|96|True|True|True|16|2 decision=keep score=9.756482 reason=score_improved
+iter=6 cand=blocked_pack|128|32|96|True|True|True|4|4 decision=revert score=3.992181 reason=improvement_below_threshold
+iter=7 cand=blocked_pack|128|64|32|True|True|True|8|2 decision=revert score=7.661936 reason=improvement_below_threshold
+iter=8 cand=blocked_pack|32|32|96|True|True|True|2|4 decision=revert score=2.245059 reason=improvement_below_threshold
+iter=9 cand=blocked_pack|128|128|64|True|True|False|2|1 decision=revert score=2.994798 reason=improvement_below_threshold
+iter=10 cand=blocked|96|96|32|False|False|True|4|1 decision=revert score=4.394505 reason=improvement_below_threshold
+iter=11 cand=blocked_pack_simd|32|128|16|True|True|True|4|2 decision=revert score=5.596544 reason=improvement_below_threshold

@@ -1,0 +1,18 @@
+platform: gpu
+runtime:
+  device: cuda
+benchmark:
+  warmup_iters: 10
+  measure_iters: 40
+  timeout_sec: 120
+correctness:
+  fp32:
+    atol: 1.0e-5
+    rtol: 1.0e-5
+  fp16:
+    atol: 1.0e-2
+    rtol: 1.0e-2
+  bf16:
+    atol: 2.0e-2
+    rtol: 2.0e-2
+

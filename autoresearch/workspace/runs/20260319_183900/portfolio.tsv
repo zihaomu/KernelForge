@@ -1,0 +1,3 @@
+op_id	status	iterations	best_score	best_candidate	run_dir
+cpu_gemm	completed	11	9.756482	blocked_pack_simd|96|64|96|True|True|True|16|2	/home/moo/work/my_lab/kernel_codex/autoresearch/workspace/runs/20260319_183900/cpu_gemm
+gpu_gemm	skipped	0	0.000000		/home/moo/work/my_lab/kernel_codex/autoresearch/workspace/runs/20260319_183900/gpu_gemm

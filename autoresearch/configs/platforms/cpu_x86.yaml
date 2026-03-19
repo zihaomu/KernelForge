@@ -1,0 +1,11 @@
+platform: cpu
+runner:
+  source_dir: kernel_autoresearch_v2/cpp_runner
+  build_dir: kernel_autoresearch_v2/cpp_runner/build
+  binary_name: kc_gemm_runner
+  cmake_build_type: Release
+benchmark:
+  warmup_iters: 2
+  measure_iters: 6
+  timeout_sec: 30
+
